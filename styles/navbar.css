@@ -1,0 +1,13 @@
+/* Burger Menu Styles (Must be included in every file's <style> tag) */
+.burger-line {
+    transition: all 0.3s ease-in-out;
+}
+#mobile-menu.is-active .line-top {
+    transform: translateY(7px) rotate(45deg);
+}
+#mobile-menu.is-active .line-middle {
+    opacity: 0;
+}
+#mobile-menu.is-active .line-bottom {
+    transform: translateY(-7px) rotate(-45deg);
+}

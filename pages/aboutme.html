@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Adaptive Portfolio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/aboutme.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#050505',
+                        card: '#0f0f11',
+                        primary: '#a855f7', // Purple-500
+                        secondary: '#d8b4fe',
+                    },
+                    backgroundImage: {
+                        'glow-gradient': 'radial-gradient(circle, rgba(168,85,247,0.15) 0%, rgba(5,5,5,0) 70%)',
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+<body class="bg-dark text-white font-sans antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+
+    <div class="fixed top-20 left-0 w-[500px] h-[500px] bg-purple-900/10 blur-[100px] rounded-full pointer-events-none -z-10"></div>
+    <div class="fixed bottom-0 right-1/4 w-[600px] h-[600px] bg-blue-900/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+
+    <!--part nav bar-->
+    <div id="navbar-placeholder"></div>
+
+    <section class="pt-40 pb-20 container mx-auto px-6 text-center reveal">
+        <p class="text-primary text-sm font-medium tracking-widest uppercase mb-4">The Story</p>
+        <h1 class="text-5xl md:text-7xl font-semibold bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500">
+            Beyond the Pixel.
+        </h1>
+    </section>
+
+    <section class="py-10 container mx-auto px-6">
+        <div class="flex flex-col md:flex-row gap-16 items-start">
+            
+            <div class="md:w-5/12 reveal">
+                <div class="relative rounded-2xl overflow-hidden border border-white/10 group aspect-[3/4]">
+                    <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="/assets/images/Abdessamad.jpg" 
+                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105" 
+                        alt="Portrait">
+                </div>
+                
+                <div class="mt-8 flex justify-between items-center border-t border-white/10 pt-6">
+                    <span class="font-bold text-lg italic text-gray-400">Abdessamad El Ouarrag</span>
+                    <div class="flex gap-4 text-gray-400">
+                        <a href="#" class="hover:text-primary transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="hover:text-primary transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-primary transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:w-7/12 reveal delay-100">
+                <h2 class="text-3xl font-semibold mb-6">Hello, I'm a digital designer focused on crafting immersive web experiences.</h2>
+                
+                <div class="space-y-6 text-gray-400 leading-relaxed text-lg">
+                    <p>
+                        My journey began 5 years ago when I opened my first design software. What started as curiosity quickly turned into a passion for solving problems through visual language.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-6">
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5 text-center hover:border-primary/30 transition-colors">
+                        <h3 class="text-3xl font-bold text-white mb-1">03+</h3>
+                        <p class="text-xs text-gray-500 uppercase tracking-wider">Years Exp Design.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5 text-center hover:border-primary/30 transition-colors">
+                        <h3 class="text-3xl font-bold text-white mb-1">01+</h3>
+                        <p class="text-xs text-gray-500 uppercase tracking-wider">Years Exp Devlopment</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white/5 border border-white/5 text-center hover:border-primary/30 transition-colors col-span-2 md:col-span-1">
+                        <h3 class="text-3xl font-bold text-white mb-1">12+</h3>
+                        <p class="text-xs text-gray-500 uppercase tracking-wider">Clients</p>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <h3 class="text-2xl font-semibold mb-8 border-b border-white/10 pb-4">Experience & Edication</h3>
+                    
+                    <div class="space-y-8">
+                        <div class="group flex gap-6 md:gap-12">
+                            <span class="text-gray-500 font-mono text-sm pt-1">2021 - Present</span>
+                            <div>
+                                <h4 class="text-xl font-medium group-hover:text-primary transition-colors">Senior Product Designer</h4>
+                                <p class="text-sm text-gray-500 mb-2">Creative Studio Agency</p>
+                                <p class="text-gray-400 text-sm">Leading the design system team and overseeing UI/UX for major client projects involving FinTech.</p>
+                            </div>
+                        </div>
+
+                        <div class="group flex gap-6 md:gap-12">
+                            <span class="text-gray-500 font-mono text-sm pt-1">2021 - 2023</span>
+                            <div>
+                                <h4 class="text-xl font-medium group-hover:text-primary transition-colors">UI/UX Designer</h4>
+                                <p class="text-sm text-gray-500 mb-2">Freelance</p>
+                                <p class="text-gray-400 text-sm">Worked with over 20 startups to define their visual identity and web presence.</p>
+                            </div>
+                        </div>
+
+                        <div class="group flex gap-6 md:gap-12">
+                            <span class="text-gray-500 font-mono text-sm pt-1">2021 - 2023</span>
+                            <div>
+                                <h4 class="text-xl font-medium group-hover:text-primary transition-colors">Graphic Designer</h4>
+                                <p class="text-sm text-gray-500 mb-2">Freelance</p>
+                                <p class="text-gray-400 text-sm">Created marketing assets, social media visuals, and assisted in logo development.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 container mx-auto px-6">
+        <h2 class="text-3xl font-semibold mb-12 text-center reveal">What I do</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <div class="reveal p-8 rounded-2xl bg-[#0a0a0c] border border-white/5 hover:border-primary/50 transition-all group">
+                <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-layer-group"></i>
+                </div>
+                <h3 class="text-xl font-medium mb-3">UI/UX Design</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Designing intuitive interfaces that are easy to use and visually stunning.</p>
+            </div>
+
+            <div class="reveal delay-100 p-8 rounded-2xl bg-[#0a0a0c] border border-white/5 hover:border-primary/50 transition-all group">
+                <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-cube"></i>
+                </div>
+                <h3 class="text-xl font-medium mb-3">3D & Motion</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Adding depth and interactivity to web projects using modern 3D techniques.</p>
+            </div>
+
+            <div class="reveal delay-200 p-8 rounded-2xl bg-[#0a0a0c] border border-white/5 hover:border-primary/50 transition-all group">
+                <div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-pen-nib"></i>
+                </div>
+                <h3 class="text-xl font-medium mb-3">Branding</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Crafting unique logos and brand guidelines that tell a consistent story.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="contact" class="py-20 bg-black relative overflow-hidden border-t border-white/5">
+        <div class="container mx-auto px-6 text-center reveal">
+            <p class="text-purple-400 text-sm mb-4 tracking-widest uppercase">Let's work together</p>
+            <h2 class="text-3xl md:text-5xl font-bold mb-12 underline decoration-purple-500/50 hover:decoration-purple-500 transition-all cursor-pointer">
+                abdessamad.4804.com
+            </h2>
+
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 border-t border-white/10 pt-8 mt-12">
+                <div class="flex items-center gap-4 mb-4 md:mb-0">
+                    <span>AE Design Agency</span>
+                </div>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-white transition-colors">Instagram</a>
+                    <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                    <a href="#" class="hover:text-white transition-colors">Dribbble</a>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    &copy; 2025 All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/aboutme.js"></script>
+    <script src="/js/navbar.js"></script>
+</body>
+</html>

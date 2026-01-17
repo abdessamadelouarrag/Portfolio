@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Available Soon</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/services.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#050505',
+                        card: '#0f0f11',
+                        primary: '#a855f7', // Purple-500
+                        secondary: '#d8b4fe',
+                    },
+                }
+            }
+        }
+    </script>
+
+</head>
+<body class="bg-dark text-white font-sans antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+
+    <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-purple-900/10 blur-[150px] rounded-full pointer-events-none -z-10 shimmer-pulse"></div>
+
+    <!--part nav bar-->
+    <div id="navbar-placeholder"></div>
+
+    <section class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative">
+        <div class="reveal">
+            <h1 class="text-5xl md:text-8xl font-extrabold leading-none mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400">
+                CAPABILITIES
+            </h1>
+            
+            <p class="text-3xl md:text-4xl font-light text-primary tracking-widest uppercase mt-8 reveal delay-100">
+                AVAILABLE SOON
+            </p>
+
+            <p class="text-lg text-gray-400 mt-10 max-w-xl mx-auto reveal delay-200">
+                I am currently redefining my service packages to offer the best and most adaptive solutions for modern brands. Please check back later, or contact me directly to discuss your specific needs.
+            </p>
+
+            <div class="mt-12 reveal delay-300">
+                <a href="contact.html" class="group relative px-8 py-3 rounded-full bg-primary text-white font-semibold hover:bg-purple-700 transition-colors shadow-lg shadow-primary/30">
+                    Discuss a Project Now
+                    <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-black relative border-t border-white/5">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold mb-8 underline decoration-purple-500/50 hover:decoration-purple-500 transition-all cursor-pointer">
+                abdessamad.4804.com
+            </h2>
+            <div class="text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center">
+                <span>AE Design Agency</span>
+                <span class="mt-2 md:mt-0">&copy; 2025 All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/services.js"></script>
+    <script src="/js/navbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Adaptive Portfolio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/projects.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#050505',
+                        card: '#0f0f11',
+                        primary: '#a855f7', // Purple-500
+                        secondary: '#d8b4fe',
+                    },
+                    backgroundImage: {
+                        'glow-gradient': 'radial-gradient(circle, rgba(168,85,247,0.15) 0%, rgba(5,5,5,0) 70%)',
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+<body class="bg-dark text-white font-sans antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+
+    <div class="fixed top-0 right-1/2 translate-x-1/2 w-[800px] h-[400px] bg-purple-900/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+
+    <!--part nav bar-->
+    <div id="navbar-placeholder"></div>
+
+    <section class="pt-40 pb-12 container mx-auto px-6 text-center reveal">
+        <h1 class="text-5xl md:text-6xl font-semibold mb-6">Selected Works</h1>
+        <p class="text-gray-400 max-w-xl mx-auto mb-10">
+            A curated collection of projects ranging from brand identity to immersive web experiences.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4">
+            <button onclick="filterProjects('all')" class="filter-btn active px-6 py-2 rounded-full border border-white/20 bg-white text-black font-medium transition-all hover:bg-white hover:text-black">All</button>
+            <button onclick="filterProjects('branding')" class="filter-btn px-6 py-2 rounded-full border border-white/10 text-gray-400 hover:border-white hover:text-white transition-all">Branding</button>
+            <button onclick="filterProjects('web')" class="filter-btn px-6 py-2 rounded-full border border-white/10 text-gray-400 hover:border-white hover:text-white transition-all">Web Design</button>
+            <button onclick="filterProjects('3d')" class="filter-btn px-6 py-2 rounded-full border border-white/10 text-gray-400 hover:border-white hover:text-white transition-all">3D Art</button>
+        </div>
+    </section>
+
+    <section class="pb-24 container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
+            
+            <div class="project-item group reveal cursor-pointer" data-category="web">
+                <div class="relative h-[450px] rounded-2xl bg-[#0a0a0c] overflow-hidden border border-white/5 mb-4 group">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all z-10"></div>
+                    <img src="/assets/images/workspace.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Fintech App">
+                    
+                    <div class="absolute bottom-6 right-6 w-12 h-12 bg-white text-black rounded-full flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 z-20">
+                        <i class="fa-solid fa-arrow-right -rotate-45"></i>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-1">
+                        <h3 class="text-2xl font-medium">Virtual WorkSpace</h3>
+                        <span class="text-xs font-mono text-gray-500 border border-white/10 px-2 py-1 rounded">2025</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Front End • Web Application</p>
+                </div>
+            </div>
+
+            <div class="project-item group reveal delay-100 cursor-pointer" data-category="branding">
+                <div class="relative h-[450px] rounded-2xl bg-[#0a0a0c] overflow-hidden border border-white/5 mb-4 group">
+                    <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Brand Book">
+                    <div class="absolute bottom-6 right-6 w-12 h-12 bg-white text-black rounded-full flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 z-20">
+                        <i class="fa-solid fa-arrow-right -rotate-45"></i>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-1">
+                        <h3 class="text-2xl font-medium">Lumina Identity</h3>
+                        <span class="text-xs font-mono text-gray-500 border border-white/10 px-2 py-1 rounded">2023</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Branding • Print</p>
+                </div>
+            </div>
+
+            <div class="project-item group reveal md:col-span-2 cursor-pointer" data-category="branding">
+                <div class="relative h-[400px] rounded-2xl bg-[#0a0a0c] overflow-hidden border border-white/5 mb-4 group">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Tech Setup">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                    
+                    <div class="absolute bottom-8 left-8">
+                        <h3 class="text-3xl font-bold mb-2">Future Tech Rebrand</h3>
+                        <p class="text-gray-300 max-w-md">A complete overhaul of a legacy tech company, focusing on minimalist aesthetics and bold typography.</p>
+                    </div>
+
+                    <div class="absolute bottom-8 right-8 w-14 h-14 bg-white text-black rounded-full flex items-center justify-center opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 z-20">
+                        <i class="fa-solid fa-arrow-right -rotate-45"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-20 bg-primary/5 border-y border-white/5">
+        <div class="container mx-auto px-6 text-center reveal">
+            <h2 class="text-4xl font-bold mb-6">Have a project in mind?</h2>
+            <p class="text-gray-400 mb-8">I'm currently available for freelance work and open to new opportunities.</p>
+            <a href="#contact" class="inline-block px-8 py-3 rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-colors">
+                Start a Conversation
+            </a>
+        </div>
+    </section>
+
+    <footer id="contact" class="py-12 bg-black relative">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold mb-8 underline decoration-purple-500/50 hover:decoration-purple-500 transition-all cursor-pointer">
+                abdessamad.4804.com
+            </h2>
+            <div class="text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center">
+                <span>AE Design Agency</span>
+                <span class="mt-2 md:mt-0">&copy; 2025 All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/projects.js"></script>
+    <script src="/js/navbar.js"></script>
+</body>
+</html>

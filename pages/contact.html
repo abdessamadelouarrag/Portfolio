@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Adaptive Portfolio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/styles/contact.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#050505',
+                        card: '#0f0f11',
+                        primary: '#a855f7', // Purple-500
+                        secondary: '#d8b4fe',
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* SCROLL REVEAL STYLES (REQUIRED) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* BURGER MENU STYLES (REQUIRED) */
+        .burger-line {
+            transition: all 0.3s ease-in-out;
+        }
+        #mobile-menu.is-active .line-top {
+            transform: translateY(7px) rotate(45deg);
+        }
+        #mobile-menu.is-active .line-middle {
+            opacity: 0;
+        }
+        #mobile-menu.is-active .line-bottom {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-white font-sans antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-purple-900/15 blur-[150px] rounded-full pointer-events-none -z-10"></div>
+
+    <!--part nav bar-->
+    <div id="navbar-placeholder"></div>
+
+    <section class="pt-40 pb-20 container mx-auto px-6 text-center reveal">
+        <p class="text-primary text-sm font-medium tracking-widest uppercase mb-4">Let's Connect</p>
+        <h1 class="text-5xl md:text-7xl font-semibold bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500">
+            Get in Touch.
+        </h1>
+    </section>
+
+    <section class="pb-32 container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+            
+            <div class="space-y-12 reveal">
+                <div class="space-y-4">
+                    <h2 class="text-3xl font-semibold mb-4">Email me directly</h2>
+                    <p class="text-gray-400">
+                        Whether you have a groundbreaking idea, a question, or just want to chat about design, my inbox is open 24/7.
+                    </p>
+                    <a href="mailto:abdessamad.4804@email.com" class="flex items-center gap-3 text-lg font-medium text-primary hover:text-white transition-colors">
+                        <i class="fa-solid fa-envelope"></i> abdessamad.4804@email.com
+                    </a>
+                </div>
+
+                <div class="space-y-4 pt-6 border-t border-white/10">
+                    <h2 class="text-3xl font-semibold mb-4">Connect elsewhere</h2>
+                    <div class="flex gap-6 text-2xl text-gray-400">
+                        <a href="#" class="hover:text-primary transition-colors" title="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+                        <a href="#" class="hover:text-primary transition-colors" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-primary transition-colors" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="hover:text-primary transition-colors" title="Behance"><i class="fa-brands fa-behance"></i></a>
+                    </div>
+                </div>
+
+                <div class="space-y-4 pt-6 border-t border-white/10">
+                    <h2 class="text-3xl font-semibold mb-4">Location</h2>
+                    <p class="text-gray-400">
+                        Based in Casablanca, Morocco (GMT+1). <br>Available for remote work globally.
+                    </p>
+                </div>
+            </div>
+
+            <div class="reveal delay-100 p-8 rounded-3xl bg-card border border-white/10 shadow-2xl shadow-primary/10">
+                <h2 class="text-3xl font-semibold mb-8">What are you working on?</h2>
+                
+                <form class="space-y-6">
+                    <div>
+                        <input type="text" placeholder="Your Full Name" class="form-input" required>
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Your Professional Email" class="form-input" required>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Project Budget (Optional)" class="form-input">
+                    </div>
+                    <div>
+                        <textarea placeholder="Tell me about your project, goals, and timeline..." class="form-input h-36 resize-none" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full px-6 py-4 rounded-xl bg-primary text-white font-semibold text-lg hover:bg-purple-700 transition-colors shadow-lg shadow-primary/30">
+                        Send Message <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-black relative border-t border-white/5">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold mb-8 underline decoration-purple-500/50 hover:decoration-purple-500 transition-all cursor-pointer">
+                abdessamad.4804.com
+            </h2>
+            <div class="text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center">
+                <span>AE Design Agency</span>
+                <span class="mt-2 md:mt-0">&copy; 2025 All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/contact.js"></script>
+    <script src="/js/navbar.js"></script>
+</body>
+</html>
