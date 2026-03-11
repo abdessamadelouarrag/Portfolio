@@ -44,95 +44,181 @@
     <!--part nav bar-->
     <div id="navbar-placeholder"></div>
 
-    <section class="min-h-screen flex flex-col items-center justify-center text-center px-4 relative pt-20">
-        <div class="reveal">
-            <h1 class="text-5xl md:text-7xl font-semibold leading-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400">
-                Adaptive Logo Design <br> for Your Brand
-            </h1>
-            <div class="flex justify-center mt-8">
-                <button class="group relative px-8 py-3 rounded-full bg-white/5 border border-white/10 hover:border-primary/50 transition-all overflow-hidden">
-                    <div class="absolute inset-0 bg-primary/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                    <span class="relative flex items-center gap-2">
-                        Explore Work <i class="fa-solid fa-arrow-down text-xs"></i>
-                    </span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-20 container mx-auto px-6 mx-16">
-        <div class="flex flex-col md:flex-row items-center justify-center gap-12">
-            <div class="md:w-1/2 reveal">
-                <h2 class="text-4xl md:text-5xl font-semibold mb-6">Let's get know <br> about me closer</h2>
-                <p class="text-gray-400 leading-relaxed mb-8 max-w-md">
-                    I'm a digital creator who loves crafting unique visual identities. 
-                    From 3D styling to minimal logo design, I help brands stand out 
-                    in the digital noise.
+    <section class="min-h-screen flex items-center relative pt-28 pb-16 px-4">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+            <div class="md:w-1/2 text-center md:text-left">
+                <div class="hero-intro inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/5 border border-white/10 text-xs tracking-[0.25em] uppercase text-gray-300">
+                    <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+                    Brand & 3D Visual Identity
+                </div>
+                <h1 class="hero-title text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight mt-6 mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400">
+                    Adaptive Logo Design<br class="hidden md:block"> for your next chapter
+                </h1>
+                <p class="hero-subtitle text-gray-400 max-w-xl mx-auto md:mx-0 leading-relaxed">
+                    I craft minimal, adaptive identities and 3D visuals that feel tailored, premium, and timeless across every touchpoint of your brand.
                 </p>
-                <a href="/pages/aboutme.html" class="text-sm font-medium border-b border-white/30 pb-1 hover:text-primary hover:border-primary transition-colors">
-                    Know More About Me<i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
-                </a>
-            </div>
-
-            <div class="flex justify-center reveal delay-100">
-                <div class="relative w-72 h-80 md:w-80 md:h-96 rounded-[2rem] overflow-hidden border border-white/10 group">
-                    <img src="/assets/images/Abdessamad.jpg" alt="Profile" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="py-24 container mx-auto px-6">
-        <div class="text-center mb-16 reveal">
-            <h2 class="text-3xl md:text-4xl font-semibold">My Projects Highlight</h2>
-            <div class="mt-4 inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/5 text-xs text-gray-300 border border-white/5">
-                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> Available for work
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            
-            <div class="group reveal cursor-pointer">
-                <div class="relative h-[400px] rounded-2xl bg-[#0a0a0c] overflow-hidden border border-white/5 mb-4 p-8 flex items-center justify-center">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" alt="Abstract Art">
-                </div>
-                <div class="flex justify-between items-end">
-                    <div>
-                        <h3 class="text-xl font-medium mb-1">Brand Identity Improvements</h3>
-                        <p class="text-xs text-gray-500 uppercase tracking-widest">Design • 3D Art</p>
-                    </div>
-                    <a href="/pages/projects.html" class="flex">  
-                        <button class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
-                            <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform"></i>
-                        </button>
+                <div class="hero-cta flex flex-col sm:flex-row items-center gap-4 mt-8 justify-center md:justify-start">
+                    <a href="#projects" class="group relative inline-flex items-center justify-center px-8 py-3 rounded-full bg-primary text-sm font-medium text-white overflow-hidden">
+                        <span class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="relative flex items-center gap-2">
+                            View Selected Work
+                            <i class="fa-solid fa-arrow-down text-xs group-hover:translate-y-0.5 transition-transform"></i>
+                        </span>
+                    </a>
+                    <a href="/pages/contact.html" class="inline-flex items-center gap-2 text-sm font-medium text-gray-300 hover:text-white transition-colors">
+                        Let’s start a project
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
                     </a>
                 </div>
-            </div>
-
-            <div class="group reveal delay-100 cursor-pointer">
-                <div class="relative h-[400px] rounded-2xl bg-[#0a0a0c] overflow-hidden border border-white/5 mb-4 p-8 flex items-center justify-center">
-                    <img src="https://images.unsplash.com/photo-1633511090164-b43840ea1607?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" alt="Abstract Shapes">
-                </div>
-                <div class="flex justify-between items-end">
-                    <div>
-                        <h3 class="text-xl font-medium mb-1">Geometric Evolutions</h3>
-                        <p class="text-xs text-gray-500 uppercase tracking-widest">Art Direction</p>
+                <div class="mt-10 flex flex-wrap justify-center md:justify-start gap-6 text-xs text-gray-400">
+                    <div class="flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-sm">5+</span>
+                        <span class="uppercase tracking-widest">Brands crafted</span>
                     </div>
-                    <button class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
-                        <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform"></i>
-                    </button>
+                    <div class="flex items-center gap-2">
+                        <span class="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
+                            <i class="fa-solid fa-cubes text-xs"></i>
+                        </span>
+                        <span class="uppercase tracking-widest">3D • Logo Systems</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="mt-20 flex justify-center reveal delay-200">
-                <a href="project.html" 
-                class="bg-primary text-white font-bold text-xl uppercase tracking-wide px-8 py-3 rounded-full shadow-xl shadow-primary/50 transition-all duration-300 hover:bg-purple-700 hover:shadow-2xl hover:shadow-primary">
-                    See More Projects 
-                    <i class="fa-solid fa-arrow-up ml-3"></i>
-                </a>
+            <div class="md:w-1/2">
+                <div class="reveal float-anim relative w-full max-w-md mx-auto">
+                    <div class="absolute -inset-6 bg-glow-gradient opacity-70 blur-3xl pointer-events-none"></div>
+                    <div class="relative rounded-[2.25rem] bg-card/80 border border-white/10 overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.9)]">
+                        <div class="relative h-80 md:h-96 overflow-hidden">
+                            <img src="/assets/images/home.jpg" class="w-full h-full object-cover opacity-90 transition-transform duration-700 ease-out hover:scale-105" alt="Featured identity work">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between">
+                                <div>
+                                    <p class="text-xs uppercase tracking-[0.25em] text-gray-400 mb-1">Selected Case Study</p>
+                                    <p class="text-sm font-medium text-white">Immersive logo explorations</p>
+                                </div>
+                                <div class="flex -space-x-2">
+                                    <span class="w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-[10px] uppercase tracking-[0.2em]">AE</span>
+                                    <span class="w-8 h-8 rounded-full bg-primary/20 border border-primary/50 flex items-center justify-center">
+                                        <i class="fa-solid fa-arrow-trend-up text-xs text-primary"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-20">
+                <div class="md:w-1/2 reveal">
+                    <p class="text-xs tracking-[0.3em] uppercase text-primary mb-3">About</p>
+                    <h2 class="text-4xl md:text-5xl font-semibold mb-6 leading-tight">Let's get know <br> about me closer</h2>
+                    <p class="text-gray-400 leading-relaxed mb-6 max-w-md">
+                        I'm a digital creator who loves crafting unique visual identities.
+                        From 3D styling to minimal logo design, I help brands stand out
+                        in the digital noise.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 text-xs text-gray-300 mb-8 max-w-md">
+                        <div class="rounded-2xl border border-white/5 bg-white/5 px-4 py-3">
+                            <p class="uppercase tracking-[0.25em] text-[10px] mb-1 text-gray-400">Focus</p>
+                            <p>Logo systems, brand refresh, 3D key visuals</p>
+                        </div>
+                        <div class="rounded-2xl border border-white/5 bg-white/5 px-4 py-3">
+                            <p class="uppercase tracking-[0.25em] text-[10px] mb-1 text-gray-400">Style</p>
+                            <p>Minimal, sharp, adaptable across platforms</p>
+                        </div>
+                    </div>
+                    <a href="/pages/aboutme.html" class="inline-flex items-center gap-2 text-sm font-medium border-b border-white/30 pb-1 hover:text-primary hover:border-primary transition-colors">
+                        Know more about me
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <div class="flex justify-center md:w-1/2 reveal" data-delay="200">
+                    <div class="relative w-72 h-80 md:w-80 md:h-96 rounded-[2rem] overflow-hidden border border-white/10 group bg-card/60">
+                        <div class="absolute -inset-10 bg-glow-gradient opacity-60 blur-3xl pointer-events-none"></div>
+                        <img src="/assets/images/Abdessamad.jpg" alt="Profile" class="relative w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105">
+                        <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs">
+                            <span class="px-3 py-1 rounded-full bg-black/60 border border-white/10 uppercase tracking-[0.25em] text-[10px] text-gray-300">
+                                Designer • 3D Artist
+                            </span>
+                            <span class="px-3 py-1 rounded-full bg-primary/20 border border-primary/40 text-[11px] text-primary">
+                                Available for collaborations
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <p class="text-xs tracking-[0.3em] uppercase text-primary mb-3">Projects</p>
+                <h2 class="text-3xl md:text-4xl font-semibold">My Projects Highlight</h2>
+                <div class="mt-4 inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/5 text-xs text-gray-300 border border-white/5">
+                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> Available for work
+                </div>
             </div>
 
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <div class="group reveal cursor-pointer">
+                    <div class="relative h-[400px] rounded-2xl bg-[#0a0a0c] overflow-hidden border border-white/5 mb-4 p-8 flex items-center justify-center transition-transform duration-500 ease-out hover:-translate-y-2 hover:border-primary/40 hover:bg-white/5">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <img src="/assets/images/home.jpg" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" alt="Abstract Art">
+                        <div class="absolute top-5 left-5 z-20 flex flex-col gap-2 text-xs">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full bg-black/70 border border-white/10 uppercase tracking-[0.25em] text-[10px] text-gray-200">
+                                Identity System
+                            </span>
+                            <span class="inline-flex px-3 py-1 rounded-full bg-primary/20 border border-primary/30 text-[11px] text-primary">
+                                Web • 3D Implementation
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-end">
+                        <div>
+                            <h3 class="text-xl font-medium mb-1">Brand Identity Improvements</h3>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">Design • 3D Art</p>
+                        </div>
+                        <a href="/pages/projects.html" class="flex">
+                            <button class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center bg-black/40 group-hover:bg-white group-hover:text-black transition-all duration-300 hover:-translate-y-1">
+                                <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="group reveal" data-delay="200">
+                    <div class="relative h-[400px] rounded-2xl bg-[#0a0a0c] overflow-hidden border border-white/5 mb-4 p-8 flex items-center justify-center transition-transform duration-500 ease-out hover:-translate-y-2 hover:border-primary/40 hover:bg-white/5">
+                        <img src="/assets/images/7942286.jpg" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" alt="Abstract Shapes">
+                        <div class="absolute top-5 left-5 z-20 flex flex-col gap-2 text-xs">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full bg-black/70 border border-white/10 uppercase tracking-[0.25em] text-[10px] text-gray-200">
+                                Visual Explorations
+                            </span>
+                            <span class="inline-flex px-3 py-1 rounded-full bg-primary/20 border border-primary/30 text-[11px] text-primary">
+                                Concept • Motion Ready
+                            </span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-end">
+                        <div>
+                            <h3 class="text-xl font-medium mb-1">Geometric Evolutions</h3>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest">Art Direction</p>
+                        </div>
+                        <a href="/pages/projects.html" class="flex">
+                            <button class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center bg-black/40 group-hover:bg-white group-hover:text-black transition-all duration-300 hover:-translate-y-1">
+                                <i class="fa-solid fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
