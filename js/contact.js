@@ -13,7 +13,7 @@ function reveal() {
 window.addEventListener("scroll", reveal);
 reveal();
 
-// Contact form handling
+// Contact form handling via backend /api/contact
 document.addEventListener('DOMContentLoaded', function () {
     var form = document.getElementById('contact-form');
     if (!form) return;
