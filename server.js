@@ -94,7 +94,10 @@ ${trimmedMessage}
         return res.status(200).json({ success: true });
     } catch (error) {
         console.error('Error sending contact email:', error);
-        return res.status(500).json({ success: false, error: 'Something went wrong while sending your message. Please try again later.' });
+        return res.status(500).json({
+            success: false,
+            error: 'Email configuration error: ' + (error && error.message ? error.message : 'Unknown error')
+        });
     }
 });
 
