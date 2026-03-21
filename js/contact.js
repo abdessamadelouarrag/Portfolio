@@ -84,14 +84,20 @@ document.addEventListener('DOMContentLoaded', function () {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ name: name, email: email, subject: subject, message: message })
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                subject: subject,
+                message: message,
+                company: formData.get('company') || ''
+            })
         })
             .then(function (response) {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json().catch(function () {
-                    return { success: true };
+                return response.json().then(function (data) {
+                    if (!response.ok) {
+                        throw new Error(data.error || 'Something went wrong.');
+                    }
+                    return data;
                 });
             })
             .then(function (data) {
@@ -102,8 +108,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     setStatus((data && data.error) || 'Something went wrong. Please try again.', 'error');
                 }
             })
-            .catch(function () {
-                setStatus('Unable to send your message right now. Please try again later.', 'error');
+            .catch(function (error) {
+                setStatus(error.message || 'Unable to send your message right now. Please try again later.', 'error');
             })
             .finally(function () {
                 setLoading(false);
