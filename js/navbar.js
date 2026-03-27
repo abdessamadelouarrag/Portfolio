@@ -1,6 +1,7 @@
 
 async function loadNavbar() {
     const placeholder = document.getElementById('navbar-placeholder');
+    if (!placeholder) return;
 
     try {
         const response = await fetch('/navbar.html');
@@ -43,15 +44,16 @@ function initializeMenuLogic() {
     }
 
     // --- Active Link Highlight Logic ---
-    const currentPage = window.location.pathname.split('/').pop();
+    const currentPath = window.location.pathname === '/' ? '/index.html' : window.location.pathname;
 
     // Desktop Links
     const desktopLinks = document.querySelectorAll('.nav-link-desktop');
     desktopLinks.forEach(link => {
-        link.classList.add('hover:text-white', 'transition-colors'); // Base classes
-        if (link.getAttribute('href') === currentPage) {
+        const href = link.getAttribute('href');
+        link.classList.add('hover:text-white', 'transition-colors');
+        if (href === currentPath) {
             link.classList.add('text-white');
-            link.classList.remove('text-gray-400'); // Ensure it overrides base color
+            link.classList.remove('text-gray-400');
         } else {
             link.classList.add('text-gray-400');
         }
@@ -60,10 +62,11 @@ function initializeMenuLogic() {
     // Mobile Links
     const mobileLinks = document.querySelectorAll('.nav-link-mobile');
     mobileLinks.forEach(link => {
-        link.classList.add('text-gray-400', 'hover:text-primary', 'transition-colors', 'py-2'); // Base classes
-        if (link.getAttribute('href') === currentPage) {
+        const href = link.getAttribute('href');
+        link.classList.add('text-gray-400', 'hover:text-primary', 'transition-colors', 'py-2');
+        if (href === currentPath) {
             link.classList.add('text-primary');
-            link.classList.remove('text-gray-400'); // Ensure it overrides base color
+            link.classList.remove('text-gray-400');
         }
     });
 }

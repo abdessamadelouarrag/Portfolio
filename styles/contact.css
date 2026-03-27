@@ -1,19 +1,64 @@
+.contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 2rem;
+}
+
+.info-card {
+    border-radius: 1.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 1.4rem;
+}
+
+.contact-method {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-method:last-child {
+    border-bottom: 0;
+}
+
+.contact-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(168, 85, 247, 0.12);
+    border: 1px solid rgba(168, 85, 247, 0.25);
+    color: #d8b4fe;
+    flex-shrink: 0;
+}
+
 .form-input {
     width: 100%;
-    padding: 1rem;
-    background-color: #0a0a0c;
+    padding: 1rem 1rem 1rem 1.05rem;
+    background-color: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0.75rem;
+    border-radius: 1rem;
     color: white;
-    transition: all 0.3s;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .form-input:focus {
     outline: none;
-    border-color: #a855f7;
-    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2);
+    border-color: rgba(168, 85, 247, 0.7);
+    box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.12);
+    background-color: rgba(255, 255, 255, 0.06);
 }
 
 .form-input::placeholder {
-    color: #525252;
+    color: #6b7280;
+}
+
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
 }

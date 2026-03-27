@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Adaptive Portfolio</title>
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/contact.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script>
@@ -26,16 +24,15 @@
                     colors: {
                         dark: '#050505',
                         card: '#0f0f11',
-                        primary: '#a855f7', // Purple-500
+                        primary: '#a855f7',
                         secondary: '#d8b4fe',
                     },
                 }
             }
         }
     </script>
-    
+
     <style>
-        /* BURGER MENU STYLES (REQUIRED) */
         .burger-line {
             transition: all 0.3s ease-in-out;
         }
@@ -50,104 +47,159 @@
         }
     </style>
 </head>
-
 <body class="bg-dark text-white font-sans antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[620px] h-[620px] bg-purple-900/15 blur-[150px] rounded-full pointer-events-none -z-10 pulse-soft"></div>
+    <div class="fixed bottom-0 right-0 w-[420px] h-[420px] bg-blue-900/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
 
-    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-purple-900/15 blur-[150px] rounded-full pointer-events-none -z-10"></div>
-
-    <!--part nav bar-->
     <div id="navbar-placeholder"></div>
 
-    <section class="pt-40 pb-20 container mx-auto px-6 text-center reveal">
-        <p class="text-primary text-sm font-medium tracking-widest uppercase mb-4">Let's Connect</p>
-        <h1 class="text-5xl md:text-7xl font-semibold bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500">
-            Get in Touch.
-        </h1>
+    <section class="relative pt-36 pb-16 overflow-hidden">
+        <div class="grid-highlight opacity-40"></div>
+        <div class="container mx-auto px-6 text-center reveal">
+            <span class="section-kicker hero-intro">Contact</span>
+            <h1 class="section-heading hero-title mt-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500">
+                Let&apos;s build something strong together.
+            </h1>
+            <p class="muted-copy hero-subtitle mx-auto mt-6 max-w-2xl text-lg">
+                Share your idea, project type, or the kind of website you want to create. This form sends directly to your configured email inbox through the backend.
+            </p>
+        </div>
     </section>
 
-   
+    <section class="pb-24">
+        <div class="container mx-auto px-6">
+            <div class="contact-grid">
+                <aside class="glass-panel rounded-[2rem] p-8 reveal">
+                    <span class="section-kicker">Contact Details</span>
+                    <h2 class="mt-5 text-3xl font-semibold">Available for freelance and collaboration work</h2>
+                    <p class="mt-5 text-base leading-8 text-gray-400">
+                        If you need a portfolio refresh, landing page, or brand-focused front-end work, send your details here and I will reply by email.
+                    </p>
 
-    <section id="contact" class="reveal py-16">
-    <div class="max-w-3xl mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-4">Contact Me</h2>
-        <p class="text-gray-400 mb-8">
-            Send me a message and I will get back to you as soon as possible.
-        </p>
+                    <div class="mt-8 space-y-1">
+                        <div class="contact-method">
+                            <span class="contact-icon">
+                                <i class="fa-regular fa-envelope"></i>
+                            </span>
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.25em] text-gray-500">Email workflow</p>
+                                <p class="mt-2 text-sm text-white">Messages are sent through the portfolio backend.</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <span class="contact-icon">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </span>
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.25em] text-gray-500">Project types</p>
+                                <p class="mt-2 text-sm text-white">Portfolio sites, landing pages, design support, and UI work.</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <span class="contact-icon">
+                                <i class="fa-solid fa-clock"></i>
+                            </span>
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.25em] text-gray-500">Response</p>
+                                <p class="mt-2 text-sm text-white">Best results when you include timeline, budget, and goals.</p>
+                            </div>
+                        </div>
+                    </div>
 
-        <form id="contact-form" class="space-y-5">
-            <!-- Honeypot field -->
-            <input
-                type="text"
-                name="company"
-                autocomplete="off"
-                tabindex="-1"
-                class="hidden"
-                aria-hidden="true"
-            >
+                    <div class="info-card mt-8">
+                        <p class="text-xs uppercase tracking-[0.25em] text-primary">Before sending</p>
+                        <p class="mt-3 text-sm leading-7 text-gray-400">Tell me what you want designed or developed, who it is for, and the feeling you want the final result to have.</p>
+                    </div>
+                </aside>
 
-            <div>
-                <label for="name" class="block mb-2 text-sm font-medium">Name</label>
-                <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none"
-                    placeholder="Your name"
-                >
+                <div class="glass-panel rounded-[2rem] p-8 reveal" data-delay="100">
+                    <div class="mb-8">
+                        <span class="section-kicker">Send Email</span>
+                        <h2 class="mt-5 text-3xl font-semibold">Project inquiry form</h2>
+                        <p class="mt-4 text-sm leading-7 text-gray-400">The form validates on the page and then posts to `/api/contact`, where your SMTP settings handle the email delivery.</p>
+                    </div>
+
+                    <form id="contact-form" class="space-y-5">
+                        <input
+                            type="text"
+                            name="company"
+                            autocomplete="off"
+                            tabindex="-1"
+                            class="hidden"
+                            aria-hidden="true"
+                        >
+
+                        <div class="grid gap-5 md:grid-cols-2">
+                            <div>
+                                <label for="name" class="mb-2 block text-sm font-medium">Name</label>
+                                <input
+                                    id="name"
+                                    name="name"
+                                    type="text"
+                                    required
+                                    class="form-input"
+                                    placeholder="Your name"
+                                >
+                            </div>
+
+                            <div>
+                                <label for="email" class="mb-2 block text-sm font-medium">Email</label>
+                                <input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    required
+                                    class="form-input"
+                                    placeholder="you@example.com"
+                                >
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="subject" class="mb-2 block text-sm font-medium">Subject</label>
+                            <input
+                                id="subject"
+                                name="subject"
+                                type="text"
+                                required
+                                class="form-input"
+                                placeholder="Portfolio website, landing page, redesign..."
+                            >
+                        </div>
+
+                        <div>
+                            <label for="message" class="mb-2 block text-sm font-medium">Message</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="7"
+                                required
+                                class="form-input resize-none"
+                                placeholder="Tell me about your project, goals, and timeline..."
+                            ></textarea>
+                        </div>
+
+                        <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+                            <button
+                                id="contact-submit"
+                                type="submit"
+                                class="shine inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-black transition hover:bg-gray-200 disabled:opacity-60"
+                            >
+                                <span class="submit-label">Send Message</span>
+                                <span class="submit-icon">
+                                    <i class="fa-solid fa-paper-plane text-sm"></i>
+                                </span>
+                            </button>
+
+                            <p class="text-xs uppercase tracking-[0.25em] text-gray-500">Secure SMTP-backed form</p>
+                        </div>
+
+                        <p id="contact-status" class="mt-3 min-h-[1.25rem] text-left text-sm"></p>
+                    </form>
+                </div>
             </div>
-
-            <div>
-                <label for="email" class="block mb-2 text-sm font-medium">Email</label>
-                <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none"
-                    placeholder="you@example.com"
-                >
-            </div>
-
-            <div>
-                <label for="subject" class="block mb-2 text-sm font-medium">Subject</label>
-                <input
-                    id="subject"
-                    name="subject"
-                    type="text"
-                    required
-                    class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none"
-                    placeholder="Subject"
-                >
-            </div>
-
-            <div>
-                <label for="message" class="block mb-2 text-sm font-medium">Message</label>
-                <textarea
-                    id="message"
-                    name="message"
-                    rows="6"
-                    required
-                    class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none"
-                    placeholder="Write your message..."
-                ></textarea>
-            </div>
-
-            <button
-                id="contact-submit"
-                type="submit"
-                class="inline-flex items-center gap-2 rounded-xl bg-white text-black px-6 py-3 font-semibold transition disabled:opacity-60"
-            >
-                <span class="submit-label">Send Message</span>
-                <span class="submit-icon">➜</span>
-            </button>
-
-            <p id="contact-status" class="mt-3 text-sm min-h-[1.25rem] text-left"></p>
-        </form>
-    </div>
-</section>
-
-<script src="/js/main.js"></script>
+        </div>
+    </section>
 
     <footer class="py-12 bg-black relative border-t border-white/5">
         <div class="container mx-auto px-6 text-center">
@@ -162,7 +214,6 @@
     </footer>
 
     <script src="/js/script.js"></script>
-    <script src="/js/contact.js"></script>
     <script src="/js/navbar.js"></script>
 </body>
 </html>

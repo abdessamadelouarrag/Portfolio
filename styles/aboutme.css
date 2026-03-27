@@ -1,1 +1,129 @@
-/* Page-specific styles for About page can go here. */
+.about-hero-grid {
+    position: relative;
+    isolation: isolate;
+}
+
+.portrait-frame {
+    border-radius: 2rem;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.portrait-badge {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.8rem 1rem;
+    border-radius: 1rem;
+    background: rgba(8, 8, 10, 0.84);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(16px);
+}
+
+.portrait-badge.top {
+    top: 1.25rem;
+    right: 1.25rem;
+}
+
+.portrait-badge.bottom {
+    left: 1.25rem;
+    bottom: 1.25rem;
+}
+
+.stat-pill {
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 1.5rem;
+}
+
+.timeline {
+    position: relative;
+    display: grid;
+    gap: 1.25rem;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 10px;
+    bottom: 10px;
+    width: 1px;
+    background: linear-gradient(180deg, rgba(168, 85, 247, 0.5), rgba(255, 255, 255, 0.05));
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 999px;
+    background: #a855f7;
+    box-shadow: 0 0 0 6px rgba(168, 85, 247, 0.12);
+}
+
+.skill-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+    color: #d1d5db;
+    font-size: 0.85rem;
+}
+
+.skill-category {
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 1.5rem;
+}
+
+.skill-category h3 {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skill-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(168, 85, 247, 0.18);
+    background: rgba(168, 85, 247, 0.08);
+    color: #e5e7eb;
+    font-size: 0.85rem;
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+    .portrait-badge {
+        position: static;
+        margin-top: 1rem;
+    }
+
+    .timeline::before {
+        left: 6px;
+    }
+}

@@ -1,11 +1,9 @@
-// Lightweight animation utilities for the portfolio
+// Lightweight animation and interaction utilities for the portfolio
 
-// Mark page as loaded for hero entrance effects
 window.addEventListener('load', function () {
     document.body.classList.add('page-loaded');
 });
 
-// Scroll reveal animation using IntersectionObserver when available
 function initRevealOnScroll() {
     var reveals = document.querySelectorAll('.reveal');
     if (!reveals.length) return;
@@ -24,51 +22,54 @@ function initRevealOnScroll() {
             threshold: 0.1
         });
 
-        reveals.forEach(function (el) {
-            observer.observe(el);
+        reveals.forEach(function (element) {
+            observer.observe(element);
         });
-    } else {
-        // Fallback for older browsers
-        function revealFallback() {
-            var windowHeight = window.innerHeight;
-            var elementVisible = 150;
 
-            for (var i = 0; i < reveals.length; i++) {
-                var elementTop = reveals[i].getBoundingClientRect().top;
-
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add('active');
-                }
-            }
-        }
-
-        window.addEventListener('scroll', revealFallback);
-        revealFallback();
+        return;
     }
-}
 
-document.addEventListener('DOMContentLoaded', initRevealOnScroll);
-
-// Reveal Animation Script
-function reveal() {
-    var reveals = document.querySelectorAll('.reveal');
-
-    for (var i = 0; i < reveals.length; i++) {
+    function revealFallback() {
         var windowHeight = window.innerHeight;
-        var elementTop = reveals[i].getBoundingClientRect().top;
         var elementVisible = 150;
 
-        if (elementTop < windowHeight - elementVisible) {
-            reveals[i].classList.add('active');
+        for (var i = 0; i < reveals.length; i++) {
+            var elementTop = reveals[i].getBoundingClientRect().top;
+
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add('active');
+            }
         }
     }
+
+    window.addEventListener('scroll', revealFallback);
+    revealFallback();
 }
 
-window.addEventListener('scroll', reveal);
-window.addEventListener('load', reveal);
+function initTiltCards() {
+    var cards = document.querySelectorAll('[data-tilt]');
+    if (!cards.length) return;
 
-// Contact form handling via backend /api/contact
-document.addEventListener('DOMContentLoaded', function () {
+    cards.forEach(function (card) {
+        card.addEventListener('mousemove', function (event) {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+            var rect = card.getBoundingClientRect();
+            var x = event.clientX - rect.left;
+            var y = event.clientY - rect.top;
+            var rotateY = ((x / rect.width) - 0.5) * 10;
+            var rotateX = (0.5 - (y / rect.height)) * 10;
+
+            card.style.transform = 'perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
+        });
+
+        card.addEventListener('mouseleave', function () {
+            card.style.transform = '';
+        });
+    });
+}
+
+function initContactForm() {
     var form = document.getElementById('contact-form');
     if (!form) return;
 
@@ -112,12 +113,11 @@ document.addEventListener('DOMContentLoaded', function () {
         setStatus('', '');
 
         var formData = new FormData(form);
-
-        var company = (formData.get('company') || '').trim();
-        var name = (formData.get('name') || '').trim();
-        var email = (formData.get('email') || '').trim();
-        var subject = (formData.get('subject') || '').trim();
-        var message = (formData.get('message') || '').trim();
+        var company = String(formData.get('company') || '').trim();
+        var name = String(formData.get('name') || '').trim();
+        var email = String(formData.get('email') || '').trim();
+        var subject = String(formData.get('subject') || '').trim();
+        var message = String(formData.get('message') || '').trim();
 
         if (company) {
             setStatus('Thank you for your message.', 'success');
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .then(function (data) {
                 if (data && data.success) {
-                    setStatus('Thank you—your message has been sent successfully.', 'success');
+                    setStatus('Thank you, your message has been sent successfully.', 'success');
                     form.reset();
                 } else {
                     setStatus((data && data.error) || 'Something went wrong. Please try again.', 'error');
@@ -184,4 +184,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 setLoading(false);
             });
     });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    initRevealOnScroll();
+    initTiltCards();
+    initContactForm();
 });

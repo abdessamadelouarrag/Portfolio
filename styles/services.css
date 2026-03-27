@@ -1,18 +1,48 @@
-/* Continuous Pulse Animation for the Background */
-@keyframes pulse-glow {
-
-    0%,
-    100% {
-        transform: scale(1);
-        opacity: 0.9;
-    }
-
-    50% {
-        transform: scale(1.05);
-        opacity: 1;
-    }
+.service-card-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.22), rgba(216, 180, 254, 0.08));
+    border: 1px solid rgba(168, 85, 247, 0.18);
+    color: #d8b4fe;
 }
 
-.shimmer-pulse {
-    animation: pulse-glow 5s ease-in-out infinite;
+.pricing-strip {
+    display: grid;
+    gap: 1rem;
+}
+
+.pricing-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: #d1d5db;
+}
+
+.process-step {
+    position: relative;
+    padding-left: 3.5rem;
+}
+
+.process-step::before {
+    content: attr(data-step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(168, 85, 247, 0.12);
+    border: 1px solid rgba(168, 85, 247, 0.28);
+    color: #d8b4fe;
+    font-size: 0.85rem;
+    font-weight: 700;
 }

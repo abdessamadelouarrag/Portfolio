@@ -52,9 +52,8 @@
 
         <div class="flex flex-wrap justify-center gap-4">
             <button onclick="filterProjects('all')" class="filter-btn active px-6 py-2 rounded-full border border-white/20 bg-white text-black font-medium transition-all hover:bg-white hover:text-black">All</button>
-            <button onclick="filterProjects('branding')" class="filter-btn px-6 py-2 rounded-full border border-white/10 text-gray-400 hover:border-white hover:text-white transition-all">Branding</button>
-            <button onclick="filterProjects('web')" class="filter-btn px-6 py-2 rounded-full border border-white/10 text-gray-400 hover:border-white hover:text-white transition-all">Web Design</button>
-            <button onclick="filterProjects('3d')" class="filter-btn px-6 py-2 rounded-full border border-white/10 text-gray-400 hover:border-white hover:text-white transition-all">3D Art</button>
+            <button onclick="filterProjects('back-end')" class="filter-btn px-6 py-2 rounded-full border border-white/10 text-gray-400 hover:border-white hover:text-white transition-all">Back End</button>
+            <button onclick="filterProjects('web')" class="filter-btn px-6 py-2 rounded-full border border-white/10 text-gray-400 hover:border-white hover:text-white transition-all">Front End</button>
         </div>
     </section>
 
@@ -79,36 +78,35 @@
                 </div>
             </div>
 
-            <div class="project-item group reveal delay-100 cursor-pointer" data-category="branding">
+            <div class="project-item group reveal delay-100 cursor-pointer" data-category="back-end">
                 <div class="relative h-[450px] rounded-2xl bg-[#0a0a0c] overflow-hidden border border-white/5 mb-4 group">
-                    <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Brand Book">
+                    <img src="/assets/images/home.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Brand Book">
                     <div class="absolute bottom-6 right-6 w-12 h-12 bg-white text-black rounded-full flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 z-20">
                         <i class="fa-solid fa-arrow-right -rotate-45"></i>
                     </div>
                 </div>
                 <div>
                     <div class="flex justify-between items-center mb-1">
-                        <h3 class="text-2xl font-medium">Lumina Identity</h3>
-                        <span class="text-xs font-mono text-gray-500 border border-white/10 px-2 py-1 rounded">2023</span>
+                        <h3 class="text-2xl font-medium">Coach Pro</h3>
+                        <span class="text-xs font-mono text-gray-500 border border-white/10 px-2 py-1 rounded">2026</span>
                     </div>
-                    <p class="text-gray-400 text-sm">Branding • Print</p>
+                    <p class="text-gray-400 text-sm">Back End • With MVC Php</p>
                 </div>
             </div>
 
-            <div class="project-item group reveal md:col-span-2 cursor-pointer" data-category="branding">
-                <div class="relative h-[400px] rounded-2xl bg-[#0a0a0c] overflow-hidden border border-white/5 mb-4 group">
-                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Tech Setup">
-                    
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
-                    
-                    <div class="absolute bottom-8 left-8">
-                        <h3 class="text-3xl font-bold mb-2">Future Tech Rebrand</h3>
-                        <p class="text-gray-300 max-w-md">A complete overhaul of a legacy tech company, focusing on minimalist aesthetics and bold typography.</p>
-                    </div>
-
-                    <div class="absolute bottom-8 right-8 w-14 h-14 bg-white text-black rounded-full flex items-center justify-center opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 z-20">
+            <div class="project-item group reveal delay-100 cursor-pointer" data-category="back-end">
+                <div class="relative h-[450px] rounded-2xl bg-[#0a0a0c] overflow-hidden border border-white/5 mb-4 group">
+                    <img src="/assets/images/7942286.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Brand Book">
+                    <div class="absolute bottom-6 right-6 w-12 h-12 bg-white text-black rounded-full flex items-center justify-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 z-20">
                         <i class="fa-solid fa-arrow-right -rotate-45"></i>
                     </div>
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-1">
+                        <h3 class="text-2xl font-medium">Stadium Pass</h3>
+                        <span class="text-xs font-mono text-gray-500 border border-white/10 px-2 py-1 rounded">2026 - New</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Back End • With OOP Php</p>
                 </div>
             </div>
 

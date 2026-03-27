@@ -16,6 +16,122 @@
     background: #a855f7;
 }
 
+:root {
+    --surface-strong: rgba(15, 15, 17, 0.86);
+    --surface-soft: rgba(255, 255, 255, 0.05);
+    --surface-border: rgba(255, 255, 255, 0.1);
+    --text-muted: #9ca3af;
+}
+
+body {
+    background:
+        radial-gradient(circle at top left, rgba(168, 85, 247, 0.12), transparent 28%),
+        radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08), transparent 24%),
+        linear-gradient(180deg, #050505 0%, #08080a 100%);
+}
+
+.glass-panel {
+    position: relative;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.03));
+    border: 1px solid var(--surface-border);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(18px);
+}
+
+.glass-panel::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    border-radius: inherit;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 35%);
+    pointer-events: none;
+}
+
+.spotlight-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.35s ease, border-color 0.35s ease, background-color 0.35s ease;
+}
+
+.spotlight-card::after {
+    content: "";
+    position: absolute;
+    inset: -35%;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.18), transparent 45%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+.spotlight-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(168, 85, 247, 0.35);
+}
+
+.spotlight-card:hover::after {
+    opacity: 1;
+}
+
+.section-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    background: rgba(255, 255, 255, 0.04);
+    color: #d1d5db;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+}
+
+.section-kicker::before {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #a855f7, #d8b4fe);
+    box-shadow: 0 0 18px rgba(168, 85, 247, 0.8);
+}
+
+.section-heading {
+    font-size: clamp(2.6rem, 4vw, 4.8rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+}
+
+.muted-copy {
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+.grid-highlight {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent);
+    pointer-events: none;
+}
+
+.orbit {
+    animation: orbit 16s linear infinite;
+}
+
+@keyframes orbit {
+    from {
+        transform: rotate(0deg) translateX(18px) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg) translateX(18px) rotate(-360deg);
+    }
+}
+
 /* Scroll reveal animation */
 .reveal {
     opacity: 0;
@@ -59,6 +175,62 @@
 
 .float-anim {
     animation: float 4s ease-in-out infinite;
+}
+
+@keyframes pulse-soft {
+    0%,
+    100% {
+        opacity: 0.45;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.9;
+        transform: scale(1.05);
+    }
+}
+
+.pulse-soft {
+    animation: pulse-soft 6s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-120%) skewX(-18deg);
+    }
+
+    100% {
+        transform: translateX(160%) skewX(-18deg);
+    }
+}
+
+.shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.shine::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 40%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+    transform: translateX(-120%) skewX(-18deg);
+    pointer-events: none;
+}
+
+.shine:hover::before {
+    animation: shimmer 1s ease;
+}
+
+.tilt-card {
+    transform-style: preserve-3d;
+    transition: transform 0.25s ease;
+    will-change: transform;
+}
+
+.tilt-card > * {
+    transform: translateZ(22px);
 }
 
 /* Hero entrance micro-animations */
@@ -115,6 +287,10 @@
     .hero-subtitle,
     .hero-cta {
         opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .tilt-card {
         transform: none !important;
     }
 }
