@@ -75,6 +75,13 @@ function initContactForm() {
 
     var submitButton = document.getElementById('contact-submit');
     var statusEl = document.getElementById('contact-status');
+    var apiBase = '';
+
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        if (window.location.port && window.location.port !== '3000') {
+            apiBase = window.location.protocol + '//' + window.location.hostname + ':3000';
+        }
+    }
 
     function setStatus(message, type) {
         if (!statusEl) return;
@@ -108,6 +115,24 @@ function initContactForm() {
         }
     }
 
+    function getFriendlySubmitError(error) {
+        var message = error && error.message ? String(error.message) : '';
+
+        if (window.location.protocol === 'file:') {
+            return 'The contact form will not work from a file preview. Start the Node server and open http://localhost:3000.';
+        }
+
+        if (message === 'Failed to fetch' || message.indexOf('NetworkError') !== -1) {
+            return 'The contact service is not reachable. Start the site with `npm.cmd start` and open it on http://localhost:3000.';
+        }
+
+        if (message === 'Something went wrong.') {
+            return 'The contact service returned an unexpected error. Make sure the site is running through the backend server on http://localhost:3000.';
+        }
+
+        return message || 'Unable to send your message right now. Please try again later.';
+    }
+
     form.addEventListener('submit', function (event) {
         event.preventDefault();
         setStatus('', '');
@@ -139,7 +164,7 @@ function initContactForm() {
         setLoading(true);
         setStatus('Sending your message...', 'info');
 
-        fetch('/api/contact', {
+        fetch(apiBase + '/api/contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -163,7 +188,7 @@ function initContactForm() {
                 }
 
                 if (!response.ok) {
-                    throw new Error(data.error || 'Something went wrong.');
+                    throw new Error(data.error || ('Contact request failed with status ' + response.status + '.'));
                 }
 
                 return data;
@@ -178,7 +203,7 @@ function initContactForm() {
             })
             .catch(function (error) {
                 console.error('Contact form error:', error);
-                setStatus(error.message || 'Unable to send your message right now. Please try again later.', 'error');
+                setStatus(getFriendlySubmitError(error), 'error');
             })
             .finally(function () {
                 setLoading(false);
