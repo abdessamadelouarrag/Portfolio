@@ -3,213 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Adaptive Portfolio</title>
-
+    <title>Contact | Abdessamad Elouarrag</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                    },
-                    colors: {
-                        dark: '#050505',
-                        card: '#0f0f11',
-                        primary: '#a855f7',
-                        secondary: '#d8b4fe',
-                    },
-                }
-            }
-        }
-    </script>
-
-    <style>
-        .burger-line {
-            transition: all 0.3s ease-in-out;
-        }
-        #mobile-menu.is-active .line-top {
-            transform: translateY(7px) rotate(45deg);
-        }
-        #mobile-menu.is-active .line-middle {
-            opacity: 0;
-        }
-        #mobile-menu.is-active .line-bottom {
-            transform: translateY(-7px) rotate(-45deg);
-        }
-    </style>
 </head>
-<body class="bg-dark text-white font-sans antialiased overflow-x-hidden selection:bg-primary selection:text-white">
-    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-[620px] h-[620px] bg-purple-900/15 blur-[150px] rounded-full pointer-events-none -z-10 pulse-soft"></div>
-    <div class="fixed bottom-0 right-0 w-[420px] h-[420px] bg-blue-900/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
-
+<body class="portfolio-body">
     <div id="navbar-placeholder"></div>
 
-    <section class="relative pt-36 pb-16 overflow-hidden">
-        <div class="grid-highlight opacity-40"></div>
-        <div class="container mx-auto px-6 text-center reveal">
-            <span class="section-kicker hero-intro">Contact</span>
-            <h1 class="section-heading hero-title mt-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500">
-                Let&apos;s build something strong together.
-            </h1>
-            <p class="muted-copy hero-subtitle mx-auto mt-6 max-w-2xl text-lg">
-                Share your idea, project type, or the kind of website you want to create. This form sends directly to your configured email inbox through the backend.
-            </p>
-        </div>
-    </section>
+    <main>
+        <section class="inner-page-hero">
+            <div class="site-shell reveal">
+                <p class="section-label">Contact</p>
+                <h1 class="inner-page-title">Reach out for a clean portfolio, landing page, or design refresh.</h1>
+                <p class="inner-page-text">
+                    Email is the fastest route, and the form below is wired to the existing contact backend so the site
+                    stays functional, not just visual.
+                </p>
+            </div>
+        </section>
 
-    <section class="pb-24">
-        <div class="container mx-auto px-6">
-            <div class="contact-grid">
-                <aside class="glass-panel rounded-[2rem] p-8 reveal">
-                    <span class="section-kicker">Contact Details</span>
-                    <h2 class="mt-5 text-3xl font-semibold">Available for freelance and collaboration work</h2>
-                    <p class="mt-5 text-base leading-8 text-gray-400">
-                        If you need a portfolio refresh, landing page, or brand-focused front-end work, send your details here and I will reply by email.
-                    </p>
+        <section class="inner-page-section">
+            <div class="site-shell contact-layout">
+                <aside class="contact-card reveal">
+                    <strong>Direct contact</strong>
+                    <h3>Let&apos;s keep it simple.</h3>
+                    <p>Share the kind of site you need, the timeline, and any references you want the visual direction to respond to.</p>
 
-                    <div class="mt-8 space-y-1">
-                        <div class="contact-method">
-                            <span class="contact-icon">
-                                <i class="fa-regular fa-envelope"></i>
-                            </span>
-                            <div>
-                                <p class="text-xs uppercase tracking-[0.25em] text-gray-500">Email workflow</p>
-                                <p class="mt-2 text-sm text-white">Messages from this form are delivered to <a href="mailto:abdessamad4804@gmail.com" class="text-primary underline decoration-primary/50 underline-offset-4 hover:text-white">abdessamad4804@gmail.com</a>.</p>
-                            </div>
+                    <div class="contact-list">
+                        <div class="contact-line">
+                            <p class="project-kicker">Email</p>
+                            <a href="mailto:abdessamad4804@gmail.com" class="contact-mail-link">abdessamad4804@gmail.com</a>
                         </div>
-                        <div class="contact-method">
-                            <span class="contact-icon">
-                                <i class="fa-solid fa-briefcase"></i>
-                            </span>
-                            <div>
-                                <p class="text-xs uppercase tracking-[0.25em] text-gray-500">Project types</p>
-                                <p class="mt-2 text-sm text-white">Portfolio sites, landing pages, design support, and UI work.</p>
-                            </div>
+                        <div class="contact-line">
+                            <p class="project-kicker">LinkedIn</p>
+                            <a href="https://www.linkedin.com/in/abdessamad-el-ouarrag/" target="_blank" rel="noopener noreferrer">abdessamad-el-ouarrag</a>
                         </div>
-                        <div class="contact-method">
-                            <span class="contact-icon">
-                                <i class="fa-solid fa-clock"></i>
-                            </span>
-                            <div>
-                                <p class="text-xs uppercase tracking-[0.25em] text-gray-500">Response</p>
-                                <p class="mt-2 text-sm text-white">Best results when you include timeline, budget, and goals.</p>
-                            </div>
+                        <div class="contact-line">
+                            <p class="project-kicker">Instagram</p>
+                            <a href="https://www.instagram.com/elg04/" target="_blank" rel="noopener noreferrer">@elg04</a>
                         </div>
-                    </div>
-
-                    <div class="info-card mt-8">
-                        <p class="text-xs uppercase tracking-[0.25em] text-primary">Before sending</p>
-                        <p class="mt-3 text-sm leading-7 text-gray-400">Tell me what you want designed or developed, who it is for, and the feeling you want the final result to have. If you prefer, you can also write directly to <a href="mailto:abdessamad4804@gmail.com" class="text-primary underline decoration-primary/50 underline-offset-4 hover:text-white">abdessamad4804@gmail.com</a>.</p>
                     </div>
                 </aside>
 
-                <div class="glass-panel rounded-[2rem] p-8 reveal" data-delay="100">
-                    <div class="mb-8">
-                        <span class="section-kicker">Send Email</span>
-                        <h2 class="mt-5 text-3xl font-semibold">Project inquiry form</h2>
-                        <p class="mt-4 text-sm leading-7 text-gray-400">The form validates on the page and then posts to `/api/contact`, where your SMTP settings send each message to `abdessamad4804@gmail.com`.</p>
-                    </div>
+                <div class="contact-form-shell reveal" data-delay="100">
+                    <strong>Contact form</strong>
+                    <h3>Send your project details.</h3>
+                    <p>Use the form for a direct inquiry. It posts to the portfolio&apos;s existing contact endpoint.</p>
 
-                    <form id="contact-form" class="space-y-5">
-                        <input
-                            type="text"
-                            name="company"
-                            autocomplete="off"
-                            tabindex="-1"
-                            class="hidden"
-                            aria-hidden="true"
-                        >
-
-                        <div class="grid gap-5 md:grid-cols-2">
-                            <div>
-                                <label for="name" class="mb-2 block text-sm font-medium">Name</label>
-                                <input
-                                    id="name"
-                                    name="name"
-                                    type="text"
-                                    required
-                                    class="form-input"
-                                    placeholder="Your name"
-                                >
-                            </div>
-
-                            <div>
-                                <label for="email" class="mb-2 block text-sm font-medium">Email</label>
-                                <input
-                                    id="email"
-                                    name="email"
-                                    type="email"
-                                    required
-                                    class="form-input"
-                                    placeholder="you@example.com"
-                                >
-                            </div>
+                    <form id="contact-form" class="form-stack">
+                        <input type="text" name="company" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        <div class="form-row">
+                            <input type="text" name="name" class="form-input" placeholder="Your name" required>
+                            <input type="email" name="email" class="form-input" placeholder="Your email" required>
                         </div>
-
+                        <input type="text" name="subject" class="form-input" placeholder="Project type or subject" required>
+                        <textarea name="message" class="form-input" placeholder="Tell me about your project, goals, and timeline." required></textarea>
                         <div>
-                            <label for="subject" class="mb-2 block text-sm font-medium">Subject</label>
-                            <input
-                                id="subject"
-                                name="subject"
-                                type="text"
-                                required
-                                class="form-input"
-                                placeholder="Portfolio website, landing page, redesign..."
-                            >
-                        </div>
-
-                        <div>
-                            <label for="message" class="mb-2 block text-sm font-medium">Message</label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                rows="7"
-                                required
-                                class="form-input resize-none"
-                                placeholder="Tell me about your project, goals, and timeline..."
-                            ></textarea>
-                        </div>
-
-                        <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
-                            <button
-                                id="contact-submit"
-                                type="submit"
-                                class="shine inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-black transition hover:bg-gray-200 disabled:opacity-60"
-                            >
+                            <button id="contact-submit" type="submit" class="submit-button">
                                 <span class="submit-label">Send Message</span>
-                                <span class="submit-icon">
-                                    <i class="fa-solid fa-paper-plane text-sm"></i>
-                                </span>
+                                <span class="submit-icon" aria-hidden="true">&nbsp;&#8599;</span>
                             </button>
-
-                            <p class="text-xs uppercase tracking-[0.25em] text-gray-500">Secure SMTP-backed form</p>
+                            <p id="contact-status" class="mt-3 text-sm min-h-[1.25rem]"></p>
                         </div>
-
-                        <p id="contact-status" class="mt-3 min-h-[1.25rem] text-left text-sm"></p>
                     </form>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <footer class="py-12 bg-black relative border-t border-white/5">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-2xl font-bold mb-8 underline decoration-purple-500/50 hover:decoration-purple-500 transition-all cursor-pointer">
-                abdessamad.4804.com
-            </h2>
-            <div class="text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center">
-                <span>AE Design Agency</span>
-                <span class="mt-2 md:mt-0">&copy; 2025 All rights reserved.</span>
-            </div>
+    <footer class="site-footer">
+        <div class="site-shell footer-row">
+            <p>AE Portfolio</p>
+            <p>Direct contact and working inquiry form</p>
+            <p>&copy; 2026</p>
         </div>
     </footer>
 

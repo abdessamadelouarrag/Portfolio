@@ -3,205 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Adaptive Portfolio</title>
-
+    <title>Services | Abdessamad Elouarrag</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/services.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                    },
-                    colors: {
-                        dark: '#050505',
-                        card: '#0f0f11',
-                        primary: '#a855f7',
-                        secondary: '#d8b4fe',
-                    },
-                }
-            }
-        }
-    </script>
 </head>
-<body class="bg-dark text-white font-sans antialiased overflow-x-hidden selection:bg-primary selection:text-white">
-    <div class="fixed top-24 left-10 w-[500px] h-[500px] bg-purple-900/10 blur-[120px] rounded-full pointer-events-none -z-10 pulse-soft"></div>
-    <div class="fixed bottom-0 right-0 w-[520px] h-[520px] bg-blue-900/10 blur-[120px] rounded-full pointer-events-none -z-10"></div>
-
+<body class="portfolio-body">
     <div id="navbar-placeholder"></div>
 
-    <section class="relative pt-36 pb-20 overflow-hidden">
-        <div class="grid-highlight opacity-40"></div>
-        <div class="container mx-auto px-6">
-            <div class="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] items-center">
-                <div class="reveal">
-                    <span class="section-kicker hero-intro">Services</span>
-                    <h1 class="section-heading hero-title mt-6 max-w-3xl bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-gray-500">
-                        Brand-focused digital work, designed to move.
-                    </h1>
-                    <p class="muted-copy hero-subtitle mt-6 max-w-2xl text-lg">
-                        I help personal brands, startups, and modern businesses shape a clean online presence through thoughtful design, responsive websites, and visual systems that feel premium from the first scroll.
-                    </p>
-                    <div class="hero-cta mt-8 flex flex-col sm:flex-row gap-4">
-                        <a href="/pages/contact.html" class="shine inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-black transition hover:bg-gray-200">
-                            Book a project call
-                            <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                        <a href="/pages/projects.html" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-3 text-sm font-medium text-gray-200 transition hover:border-primary/50 hover:text-white">
-                            See project examples
-                            <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="glass-panel rounded-[2rem] p-8 reveal tilt-card" data-tilt data-delay="200">
-                    <div class="flex items-start justify-between gap-4">
-                        <div>
-                            <p class="text-xs uppercase tracking-[0.3em] text-primary">Best for</p>
-                            <h2 class="mt-3 text-3xl font-semibold">Portfolio sites, landing pages, and brand refreshes</h2>
-                        </div>
-                        <div class="relative hidden h-16 w-16 rounded-full border border-white/10 bg-white/5 md:block">
-                            <span class="orbit absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary"></span>
-                        </div>
-                    </div>
-
-                    <div class="pricing-strip mt-8">
-                        <div class="pricing-line">
-                            <span>Portfolio website design</span>
-                            <span class="text-white">UI + Front End</span>
-                        </div>
-                        <div class="pricing-line">
-                            <span>Landing page build</span>
-                            <span class="text-white">Fast turnaround</span>
-                        </div>
-                        <div class="pricing-line">
-                            <span>Brand visuals and assets</span>
-                            <span class="text-white">Identity support</span>
-                        </div>
-                        <div class="pricing-line border-b-0 pb-0">
-                            <span>Contact form integration</span>
-                            <span class="text-white">Working email flow</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="pb-12">
-        <div class="container mx-auto px-6">
-            <div class="grid gap-6 md:grid-cols-3">
-                <article class="glass-panel spotlight-card shine rounded-[1.75rem] p-8 reveal">
-                    <div class="service-card-icon">
-                        <i class="fa-solid fa-laptop-code"></i>
-                    </div>
-                    <h3 class="mt-6 text-2xl font-semibold">Portfolio Websites</h3>
-                    <p class="mt-4 text-sm leading-7 text-gray-400">Clean, responsive, and personal websites that present your story, projects, and offers with more impact.</p>
-                    <ul class="mt-6 space-y-3 text-sm text-gray-300">
-                        <li>Responsive sections and smooth motion</li>
-                        <li>Strong visual hierarchy and modern layout</li>
-                        <li>Contact form connected to email</li>
-                    </ul>
-                </article>
-
-                <article class="glass-panel spotlight-card shine rounded-[1.75rem] p-8 reveal" data-delay="100">
-                    <div class="service-card-icon">
-                        <i class="fa-solid fa-bezier-curve"></i>
-                    </div>
-                    <h3 class="mt-6 text-2xl font-semibold">Brand Presentation</h3>
-                    <p class="mt-4 text-sm leading-7 text-gray-400">Visual systems that help your business look more credible, organized, and memorable across digital touchpoints.</p>
-                    <ul class="mt-6 space-y-3 text-sm text-gray-300">
-                        <li>Logo and identity direction</li>
-                        <li>Social and launch visuals</li>
-                        <li>Consistent design language</li>
-                    </ul>
-                </article>
-
-                <article class="glass-panel spotlight-card shine rounded-[1.75rem] p-8 reveal" data-delay="200">
-                    <div class="service-card-icon">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i>
-                    </div>
-                    <h3 class="mt-6 text-2xl font-semibold">Creative Front End</h3>
-                    <p class="mt-4 text-sm leading-7 text-gray-400">Thoughtful interactions and polished implementation that make websites feel alive without getting heavy or confusing.</p>
-                    <ul class="mt-6 space-y-3 text-sm text-gray-300">
-                        <li>Scroll reveals and hover motion</li>
-                        <li>Tailwind-based UI sections</li>
-                        <li>Performance-minded builds</li>
-                    </ul>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20">
-        <div class="container mx-auto px-6 grid gap-10 lg:grid-cols-[0.95fr_1.05fr] items-start">
-            <div class="reveal">
-                <span class="section-kicker">Process</span>
-                <h2 class="mt-5 text-3xl md:text-4xl font-semibold">How we can work together</h2>
-                <p class="mt-5 max-w-xl text-base leading-8 text-gray-400">
-                    I keep the process simple and collaborative so you always know what is happening, what comes next, and how the final result supports your goals.
+    <main>
+        <section class="inner-page-hero">
+            <div class="site-shell reveal">
+                <p class="section-label">Services</p>
+                <h1 class="inner-page-title">Minimal design systems and web builds for people who want the work to speak clearly.</h1>
+                <p class="inner-page-text">
+                    I help founders, creatives, and independent studios present themselves with stronger digital
+                    structure, cleaner visuals, and confident interaction design.
                 </p>
             </div>
+        </section>
 
-            <div class="glass-panel rounded-[2rem] p-8 reveal" data-delay="100">
-                <div class="space-y-8">
-                    <div class="process-step" data-step="01">
-                        <h3 class="text-xl font-semibold">Discovery</h3>
-                        <p class="mt-2 text-sm leading-7 text-gray-400">We define your goals, audience, references, and what success should look like for the site or brand piece.</p>
-                    </div>
-                    <div class="process-step" data-step="02">
-                        <h3 class="text-xl font-semibold">Design Direction</h3>
-                        <p class="mt-2 text-sm leading-7 text-gray-400">I shape the layout, visual tone, and content blocks so the experience feels intentional before final build-out.</p>
-                    </div>
-                    <div class="process-step" data-step="03">
-                        <h3 class="text-xl font-semibold">Build and Motion</h3>
-                        <p class="mt-2 text-sm leading-7 text-gray-400">The final interface is implemented responsively, with subtle animation and clean interaction details.</p>
-                    </div>
-                    <div class="process-step" data-step="04">
-                        <h3 class="text-xl font-semibold">Launch Support</h3>
-                        <p class="mt-2 text-sm leading-7 text-gray-400">I help polish the handoff, test the contact flow, and make sure the experience is ready to share.</p>
-                    </div>
+        <section class="inner-page-section">
+            <div class="site-shell services-layout">
+                <article class="feature-card reveal">
+                    <strong>01 Portfolio websites</strong>
+                    <h3>Personal sites that feel intentional from the first screen.</h3>
+                    <p>Custom homepage, project structure, service highlights, and contact flow designed for a refined personal presence.</p>
+                </article>
+
+                <article class="feature-card reveal" data-delay="100">
+                    <strong>02 Landing pages</strong>
+                    <h3>Focused pages with precise messaging and contrast.</h3>
+                    <p>Conversion-aware layouts that stay calm and premium instead of noisy, crowded, or over-animated.</p>
+                </article>
+
+                <article class="feature-card reveal">
+                    <strong>03 Visual systems</strong>
+                    <h3>Typography, spacing, and components that stay consistent.</h3>
+                    <p>A reusable design language that gives the full site a single voice across sections and devices.</p>
+                </article>
+
+                <article class="feature-card reveal" data-delay="100">
+                    <strong>04 Front-end implementation</strong>
+                    <h3>Responsive builds that keep the design light and sharp.</h3>
+                    <p>Clean implementation with subtle motion, high readability, and attention to real-world responsiveness.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="inner-page-section">
+            <div class="site-shell services-layout">
+                <div class="reveal">
+                    <p class="section-label">Process</p>
+                    <h2 class="section-heading">A clear path from direction to launch.</h2>
+                    <p class="section-text">The process stays collaborative and lightweight so decisions are visible and the final result stays aligned with your brand.</p>
+                </div>
+
+                <div class="process-list reveal" data-delay="100">
+                    <article class="process-step" data-step="01">
+                        <h3>Discovery</h3>
+                        <p>We define goals, references, pages, and the overall tone the portfolio should communicate.</p>
+                    </article>
+                    <article class="process-step" data-step="02">
+                        <h3>Design direction</h3>
+                        <p>I shape the typographic hierarchy, page rhythm, and call-to-action structure before full production.</p>
+                    </article>
+                    <article class="process-step" data-step="03">
+                        <h3>Build</h3>
+                        <p>The pages are assembled responsively with clear section structure and subtle motion support.</p>
+                    </article>
+                    <article class="process-step" data-step="04">
+                        <h3>Refinement</h3>
+                        <p>Final polish, spacing review, responsive checks, and launch-readiness adjustments close the loop.</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section class="pb-24">
-        <div class="container mx-auto px-6">
-            <div class="glass-panel rounded-[2rem] px-8 py-10 text-center reveal">
-                <span class="section-kicker">Next Step</span>
-                <h2 class="mt-5 text-3xl md:text-4xl font-semibold">Need a website or visual refresh?</h2>
-                <p class="mx-auto mt-4 max-w-2xl text-base leading-8 text-gray-400">Send a message with your idea, your timeline, and what kind of support you need. I will reply through the contact form email flow on this portfolio.</p>
-                <a href="/pages/contact.html" class="shine mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-3 text-sm font-semibold text-white transition hover:bg-purple-600">
-                    Send your project details
-                    <i class="fa-solid fa-paper-plane text-xs"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-12 bg-black relative border-t border-white/5">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-2xl font-bold mb-8 underline decoration-purple-500/50 hover:decoration-purple-500 transition-all cursor-pointer">
-                abdessamad.4804.com
-            </h2>
-            <div class="text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center">
-                <span>AE Design Agency</span>
-                <span class="mt-2 md:mt-0">&copy; 2025 All rights reserved.</span>
-            </div>
+    <footer class="site-footer">
+        <div class="site-shell footer-row">
+            <p>AE Portfolio</p>
+            <p>Services for premium minimalist web presence</p>
+            <p>&copy; 2026</p>
         </div>
     </footer>
 
     <script src="/js/script.js"></script>
-    <script src="/js/services.js"></script>
     <script src="/js/navbar.js"></script>
 </body>
 </html>
