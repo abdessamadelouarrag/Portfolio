@@ -75,13 +75,7 @@ function initContactForm() {
 
     var submitButton = document.getElementById('contact-submit');
     var statusEl = document.getElementById('contact-status');
-    var apiBase = '';
-
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        if (window.location.port && window.location.port !== '3000') {
-            apiBase = window.location.protocol + '//' + window.location.hostname + ':3000';
-        }
-    }
+    var targetEmail = 'abdessamad4804@gmail.com';
 
     function setStatus(message, type) {
         if (!statusEl) return;
@@ -107,30 +101,12 @@ function initContactForm() {
         var icon = submitButton.querySelector('.submit-icon');
 
         if (label) {
-            label.textContent = isLoading ? 'Sending...' : 'Send Message';
+            label.textContent = isLoading ? 'Opening...' : 'Open Email Draft';
         }
 
         if (icon) {
             icon.classList.toggle('opacity-0', isLoading);
         }
-    }
-
-    function getFriendlySubmitError(error) {
-        var message = error && error.message ? String(error.message) : '';
-
-        if (window.location.protocol === 'file:') {
-            return 'The contact form will not work from a file preview. Start the Node server and open http://localhost:3000.';
-        }
-
-        if (message === 'Failed to fetch' || message.indexOf('NetworkError') !== -1) {
-            return 'The contact service is not reachable. Start the site with `npm.cmd start` and open it on http://localhost:3000.';
-        }
-
-        if (message === 'Something went wrong.') {
-            return 'The contact service returned an unexpected error. Make sure the site is running through the backend server on http://localhost:3000.';
-        }
-
-        return message || 'Unable to send your message right now. Please try again later.';
     }
 
     form.addEventListener('submit', function (event) {
@@ -162,52 +138,25 @@ function initContactForm() {
         }
 
         setLoading(true);
-        setStatus('Sending your message...', 'info');
+        setStatus('Opening your email app...', 'info');
 
-        fetch(apiBase + '/api/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                name: name,
-                email: email,
-                subject: subject,
-                message: message,
-                company: company
-            })
-        })
-            .then(async function (response) {
-                var text = await response.text();
-                var data = {};
+        var body = [
+            'Name: ' + name,
+            'Email: ' + email,
+            '',
+            message
+        ].join('\n');
 
-                try {
-                    data = text ? JSON.parse(text) : {};
-                } catch (error) {
-                    throw new Error('Server returned an invalid response.');
-                }
+        var mailtoUrl = 'mailto:' + encodeURIComponent(targetEmail) +
+            '?subject=' + encodeURIComponent(subject) +
+            '&body=' + encodeURIComponent(body);
 
-                if (!response.ok) {
-                    throw new Error(data.error || ('Contact request failed with status ' + response.status + '.'));
-                }
+        window.location.href = mailtoUrl;
 
-                return data;
-            })
-            .then(function (data) {
-                if (data && data.success) {
-                    setStatus('Thank you, your message has been sent successfully.', 'success');
-                    form.reset();
-                } else {
-                    setStatus((data && data.error) || 'Something went wrong. Please try again.', 'error');
-                }
-            })
-            .catch(function (error) {
-                console.error('Contact form error:', error);
-                setStatus(getFriendlySubmitError(error), 'error');
-            })
-            .finally(function () {
-                setLoading(false);
-            });
+        setTimeout(function () {
+            setLoading(false);
+            setStatus('Your email draft has been prepared. If nothing opened, contact me directly at ' + targetEmail + '.', 'success');
+        }, 250);
     });
 }
 
