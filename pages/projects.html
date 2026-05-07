@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Abdessamad Elouarrag</title>
+    <title data-i18n="meta.projects_title">Projects | Abdessamad Elouarrag</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,15 +18,15 @@
     <main>
         <section class="inner-page-hero">
             <div class="site-shell reveal">
-                <p class="section-label">Projects</p>
-                <h1 class="inner-page-title">Selected work shaped through clarity, contrast, and careful structure.</h1>
-                <p class="inner-page-text">
+                <p class="section-label" data-i18n="projects.label">Projects</p>
+                <h1 class="inner-page-title" data-i18n="projects.title">Selected work shaped through clarity, contrast, and careful structure.</h1>
+                <p class="inner-page-text" data-i18n="projects.text">
                     A concise collection of portfolio and product work presented in a clean editorial system. Use the
                     filters to focus on the type of build you want to review.
                 </p>
                 <div class="filter-row">
-                    <button type="button" onclick="filterProjects('all')" class="filter-btn is-active">All</button>
-                    <button type="button" onclick="filterProjects('web')" class="filter-btn">Front End</button>
+                    <button type="button" onclick="filterProjects('all')" class="filter-btn is-active" data-i18n="projects.all">All</button>
+                    <button type="button" onclick="filterProjects('web')" class="filter-btn" data-i18n="projects.frontend">Front End</button>
                 </div>
             </div>
         </section>
@@ -37,13 +37,13 @@
                     <div class="project-item-card">
                         <img src="/assets/images/workspace.jpg" alt="Virtual Workspace project preview">
                         <div class="project-item-copy">
-                            <p class="project-kicker">Front end experience</p>
+                            <p class="project-kicker" data-i18n="projects.card1_kicker">Front end experience</p>
                             <div class="project-meta">
                                 <span>2025</span>
                                 <span>Web application</span>
                             </div>
                             <h3>Virtual Workspace</h3>
-                            <p>A focused digital workspace concept with quiet UI, strong typography, and a clean productivity-first layout.</p>
+                            <p data-i18n="projects.card1_text">A focused digital workspace concept with quiet UI, strong typography, and a clean productivity-first layout.</p>
                         </div>
                     </div>
                 </article>
@@ -52,13 +52,13 @@
                     <div class="project-item-card">
                         <img src="/assets/images/home.jpg" alt="Coach Pro project preview">
                         <div class="project-item-copy">
-                            <p class="project-kicker">Front end direction</p>
+                            <p class="project-kicker" data-i18n="projects.card2_kicker">Front end direction</p>
                             <div class="project-meta">
                                 <span>2026</span>
-                                <span>Landing page</span>
+                                <span data-i18n="projects.card2_meta">Landing page</span>
                             </div>
                             <h3>Coach Pro</h3>
-                            <p>A coaching-focused front-end concept built around strong hierarchy, clean messaging, and a polished visual flow.</p>
+                            <p data-i18n="projects.card2_text">A coaching-focused front-end concept built around strong hierarchy, clean messaging, and a polished visual flow.</p>
                         </div>
                     </div>
                 </article>
@@ -67,13 +67,13 @@
                     <div class="project-item-card">
                         <img src="/assets/images/7942286.jpg" alt="Stadium Pass project preview">
                         <div class="project-item-copy">
-                            <p class="project-kicker">Interface concept</p>
+                            <p class="project-kicker" data-i18n="projects.card3_kicker">Interface concept</p>
                             <div class="project-meta">
                                 <span>2026</span>
-                                <span>Visual exploration</span>
+                                <span data-i18n="projects.card3_meta">Visual exploration</span>
                             </div>
                             <h3>Stadium Pass</h3>
-                            <p>An event-oriented front-end concept focused on clarity, structure, and a stronger digital presentation.</p>
+                            <p data-i18n="projects.card3_text">An event-oriented front-end concept focused on clarity, structure, and a stronger digital presentation.</p>
                         </div>
                     </div>
                 </article>
@@ -84,8 +84,8 @@
 
     <footer class="site-footer">
         <div class="site-shell footer-row">
-            <p>AE Portfolio</p>
-            <p>Selected work and case study previews</p>
+            <p data-i18n="footer.brand">AE Portfolio</p>
+            <p data-i18n="projects.footer">Selected work and case study previews</p>
             <p>&copy; 2026</p>
         </div>
     </footer>
@@ -93,5 +93,6 @@
     <script src="/js/script.js"></script>
     <script src="/js/projects.js"></script>
     <script src="/js/navbar.js"></script>
+    <script src="/js/i18n.js"></script>
 </body>
 </html>

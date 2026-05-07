@@ -6,11 +6,15 @@
         </a>
 
         <div class="nav-links desktop-nav">
-            <a href="/index.html" class="nav-link-desktop">Home</a>
-            <a href="/pages/aboutme.html" class="nav-link-desktop">About</a>
-            <a href="/pages/projects.html" class="nav-link-desktop">Projects</a>
-            <a href="/pages/services.html" class="nav-link-desktop">Services</a>
-            <a href="/pages/contact.html" class="nav-link-desktop nav-link-cta">Contact</a>
+            <a href="/index.html" class="nav-link-desktop" data-i18n="nav.home">Home</a>
+            <a href="/pages/aboutme.html" class="nav-link-desktop" data-i18n="nav.about">About</a>
+            <a href="/pages/projects.html" class="nav-link-desktop" data-i18n="nav.projects">Projects</a>
+            <a href="/pages/services.html" class="nav-link-desktop" data-i18n="nav.services">Services</a>
+            <a href="/pages/contact.html" class="nav-link-desktop nav-link-cta" data-i18n="nav.contact">Contact</a>
+            <div class="lang-switch" aria-label="Language switcher">
+                <button type="button" class="lang-button is-active" data-lang="en">EN</button>
+                <button type="button" class="lang-button" data-lang="fr">FR</button>
+            </div>
         </div>
 
         <button id="mobile-menu-button" class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
@@ -25,15 +29,22 @@
 
 <div id="nav-content" class="mobile-nav-panel">
     <div class="mobile-nav-links">
-        <a href="/index.html" class="nav-link-mobile">Home</a>
-        <a href="/pages/aboutme.html" class="nav-link-mobile">About</a>
-        <a href="/pages/projects.html" class="nav-link-mobile">Projects</a>
-        <a href="/pages/services.html" class="nav-link-mobile">Services</a>
-        <a href="/pages/contact.html" class="nav-link-mobile">Contact</a>
+        <a href="/index.html" class="nav-link-mobile" data-i18n="nav.home">Home</a>
+        <a href="/pages/aboutme.html" class="nav-link-mobile" data-i18n="nav.about">About</a>
+        <a href="/pages/projects.html" class="nav-link-mobile" data-i18n="nav.projects">Projects</a>
+        <a href="/pages/services.html" class="nav-link-mobile" data-i18n="nav.services">Services</a>
+        <a href="/pages/contact.html" class="nav-link-mobile" data-i18n="nav.contact">Contact</a>
     </div>
     <div class="mobile-nav-meta">
         <a href="https://www.linkedin.com/in/abdessamad-el-ouarrag/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://www.instagram.com/elg04/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="mailto:abdessamad4804@gmail.com">Email</a>
+        <a href="mailto:abdessamad4804@gmail.com" data-i18n="nav.email">Email</a>
+        <div class="mobile-lang-block">
+            <p class="mobile-lang-label">Language</p>
+            <div class="lang-switch mobile-lang-switch" aria-label="Language switcher">
+                <button type="button" class="lang-button is-active" data-lang="en">EN</button>
+                <button type="button" class="lang-button" data-lang="fr">FR</button>
+            </div>
+        </div>
     </div>
 </div>

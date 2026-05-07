@@ -10,6 +10,7 @@ async function loadNavbar() {
 
         placeholder.innerHTML = await response.text();
         initializeMenuLogic();
+        document.dispatchEvent(new CustomEvent('navbar:loaded'));
     } catch (error) {
         console.error(error);
         placeholder.innerHTML = '<p style="text-align:center; padding: 24px;">Navigation failed to load.</p>';
