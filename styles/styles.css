@@ -746,6 +746,23 @@ textarea.form-input {
         padding-top: 94px;
     }
 
+    .inner-page-hero .site-shell,
+    .contact-layout,
+    .contact-card,
+    .contact-form-shell,
+    .contact-line,
+    .contact-preview-box,
+    .contact-preview-box .hero-actions {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .contact-mail-link {
+        display: inline-block;
+        margin-inline: auto;
+        text-align: center;
+    }
+
     .desktop-nav {
         display: none;
     }
