@@ -6,6 +6,8 @@ var portfolioTranslations = {
         "nav.services": "Services",
         "nav.contact": "Contact",
         "nav.email": "Email",
+        "theme.dark": "Dark",
+        "theme.light": "Light",
         "footer.brand": "AE Portfolio",
         "meta.home_title": "Abdessamad Elouarrag | Portfolio",
         "meta.contact_title": "Contact | Abdessamad Elouarrag",
@@ -61,14 +63,16 @@ var portfolioTranslations = {
         "projects.text": "A concise collection of portfolio and product work presented in a clean editorial system. Use the filters to focus on the type of build you want to review.",
         "projects.all": "All",
         "projects.frontend": "Front End",
-        "projects.card1_kicker": "Front end experience",
-        "projects.card1_text": "A focused digital workspace concept with quiet UI, strong typography, and a clean productivity-first layout.",
-        "projects.card2_kicker": "Front end direction",
-        "projects.card2_meta": "Landing page",
-        "projects.card2_text": "A coaching-focused front-end concept built around strong hierarchy, clean messaging, and a polished visual flow.",
-        "projects.card3_kicker": "Interface concept",
-        "projects.card3_meta": "Visual exploration",
-        "projects.card3_text": "An event-oriented front-end concept focused on clarity, structure, and a stronger digital presentation.",
+        "projects.backend": "Back End",
+        "projects.card1_kicker": "Front-end note app",
+        "projects.card1_meta": "Note app UI",
+        "projects.card1_text": "A front-end note app concept with a focused workspace layout, clean task organization, and a calm productivity-first interface.",
+        "projects.card2_kicker": "Back-end project",
+        "projects.card2_meta": "Application logic",
+        "projects.card2_text": "A coaching platform project with stronger attention to application logic, user flow structure, and the back-end side of the experience.",
+        "projects.card3_kicker": "Back-end workflow",
+        "projects.card3_meta": "API and data logic",
+        "projects.card3_text": "An event platform concept with a stronger focus on booking flow logic, data handling, and the back-end structure behind the user experience.",
         "projects.footer": "Selected work and case study previews",
         "services.label": "Services",
         "services.title": "Minimal design systems and web builds for people who want the work to speak clearly.",
@@ -102,20 +106,20 @@ var portfolioTranslations = {
         "about.title": "Designer mindset, developer structure, and a growing focus on complete web experiences.",
         "about.text": "I work at the intersection of design and development, building portfolio websites and digital experiences that feel clear, calm, and professionally presented.",
         "about.based": "Based in Morocco",
-        "about.focused": "Front-end focused",
+        "about.focused": "Full-stack focused",
         "about.bio_label": "Short bio",
         "about.bio_title": "I care about how work is presented, not only how it functions.",
-        "about.bio_text1": "My path started with visual design and client work, then expanded into front-end development and interface building. That combination helps me create websites that feel thoughtful both visually and technically.",
-        "about.bio_text2": "Today I am focused on improving my craft through real projects, training, and structured front-end work while continuing to refine a minimal design language.",
+        "about.bio_text1": "My path started with visual design and client work, then expanded into front-end and back-end development. That combination helps me create websites that feel thoughtful both visually and technically.",
+        "about.bio_text2": "Today I am focused on improving my craft through real projects, training, and structured full-stack work while continuing to refine a minimal design language.",
         "about.stat1_title": "Years in design",
         "about.stat1_text": "Freelance and marketplace-based work shaped my visual thinking and client communication.",
         "about.stat2_title": "Key timeline steps",
-        "about.stat2_text": "From design services to front-end training and interface-focused web studies.",
+        "about.stat2_text": "From design services to front-end training and full-stack web development studies.",
         "about.stat3_title": "Current focus",
-        "about.stat3_text": "Building polished front-end experiences and improving both interface quality and presentation.",
+        "about.stat3_text": "Building complete web experiences and improving both interface quality and application structure.",
         "about.timeline_label": "Timeline",
         "about.timeline_title": "Experience that connects design work and web development.",
-        "about.timeline_text": "Each step added something practical: client work, product presentation, interface fundamentals, and stronger front-end execution.",
+        "about.timeline_text": "Each step added something practical: client work, product presentation, interface fundamentals, and stronger full-stack execution.",
         "about.t1_title": "Freelance Designer / Digital Services",
         "about.t1_text": "Worked as a freelancer on Fiverr, offering digital services and design-related work. Developed practical experience in client communication, understanding project requirements, delivering work on time, and improving visual and design skills through real client projects.",
         "about.t1_skills": "<strong>Skills gained:</strong> Client communication, freelancing, digital design, time management, problem solving, online business.",
@@ -125,9 +129,9 @@ var portfolioTranslations = {
         "about.t3_title": "Meta Front-End Developer Training",
         "about.t3_text": "Completed online training focused on front-end development fundamentals. Studied HTML, CSS, JavaScript, responsive design, and modern front-end concepts. This training helped build a strong foundation in web development and user interface creation.",
         "about.t3_skills": "<strong>Skills gained:</strong> HTML, CSS, JavaScript, responsive design, UI basics, front-end fundamentals.",
-        "about.t4_title": "Front-End Web Development",
-        "about.t4_text": "Currently studying web development at YouCode UM6P Safi with a strong focus on front-end implementation, responsive interfaces, version control, teamwork, and project structure. Working on real projects to improve technical skills and professional development.",
-        "about.t4_skills": "<strong>Skills gained:</strong> Front-end development, JavaScript, responsive UI, Git/GitHub, teamwork, interface structure, project planning.",
+        "about.t4_title": "Full-Stack Web Development",
+        "about.t4_text": "Currently studying Full-Stack Web Development at YouCode UM6P Safi. Learning how to build complete web applications using modern technologies, including front-end, back-end, databases, version control, and project management. Working on real projects to improve technical skills and professional development.",
+        "about.t4_skills": "<strong>Skills gained:</strong> Full-stack development, PHP, Laravel, JavaScript, SQL, Git/GitHub, OOP, MVC, teamwork, project planning.",
         "about.skills_label": "Skills",
         "about.skills_title": "Tools and capabilities I work with.",
         "about.footer": "About, timeline, and technical profile"
@@ -139,6 +143,8 @@ var portfolioTranslations = {
         "nav.services": "Services",
         "nav.contact": "Contact",
         "nav.email": "Email",
+        "theme.dark": "Sombre",
+        "theme.light": "Clair",
         "footer.brand": "AE Portfolio",
         "meta.home_title": "Abdessamad Elouarrag | Portfolio",
         "meta.contact_title": "Contact | Abdessamad Elouarrag",
@@ -194,14 +200,16 @@ var portfolioTranslations = {
         "projects.text": "Une selection concise de portfolios et de produits presentes dans un systeme editorial epure. Utilisez les filtres pour voir le type de realisation qui vous interesse.",
         "projects.all": "Tous",
         "projects.frontend": "Front-End",
-        "projects.card1_kicker": "Experience front-end",
-        "projects.card1_text": "Un concept d'espace de travail digital avec une interface calme, une typographie forte et une mise en page axee sur la productivite.",
-        "projects.card2_kicker": "Direction front-end",
-        "projects.card2_meta": "Landing page",
-        "projects.card2_text": "Un concept front-end pour le coaching, construit autour d'une hierarchie forte, d'un message clair et d'un flux visuel soigne.",
-        "projects.card3_kicker": "Concept d'interface",
-        "projects.card3_meta": "Exploration visuelle",
-        "projects.card3_text": "Un concept front-end pour l'evenementiel, centre sur la clarte, la structure et une presentation digitale plus forte.",
+        "projects.backend": "Back-End",
+        "projects.card1_kicker": "Application de notes front-end",
+        "projects.card1_meta": "Interface note app",
+        "projects.card1_text": "Un concept d'application de notes front-end avec un espace de travail cible, une organisation claire des taches et une interface calme axee sur la productivite.",
+        "projects.card2_kicker": "Projet back-end",
+        "projects.card2_meta": "Logique applicative",
+        "projects.card2_text": "Un projet de plateforme de coaching avec plus d'attention a la logique applicative, a la structure du parcours utilisateur et a la partie back-end de l'experience.",
+        "projects.card3_kicker": "Workflow back-end",
+        "projects.card3_meta": "Logique API et donnees",
+        "projects.card3_text": "Un concept de plateforme evenementielle avec un accent plus fort sur la logique de reservation, la gestion des donnees et la structure back-end derriere l'experience utilisateur.",
         "projects.footer": "Travaux selectionnes et apercus d'etudes de cas",
         "services.label": "Services",
         "services.title": "Systemes de design minimalistes et constructions web pour ceux qui veulent que le travail parle clairement.",
@@ -234,20 +242,20 @@ var portfolioTranslations = {
         "about.title": "Vision de designer, structure de developpeur et une attention grandissante aux experiences web completes.",
         "about.text": "Je travaille a l'intersection du design et du developpement, en creant des sites portfolio et des experiences digitales claires, calmes et professionnelles.",
         "about.based": "Base au Maroc",
-        "about.focused": "Centre sur le front-end",
+        "about.focused": "Centre sur le full-stack",
         "about.bio_label": "Courte bio",
         "about.bio_title": "Je fais attention a la maniere dont le travail est presente, pas seulement a son fonctionnement.",
-        "about.bio_text1": "Mon parcours a commence avec le design visuel et le travail client, puis s'est elargi au developpement front-end et a la construction d'interfaces. Cette combinaison m'aide a creer des sites soignes visuellement et techniquement.",
-        "about.bio_text2": "Aujourd'hui, je me concentre sur l'amelioration de mon niveau a travers des projets reels, des formations et un travail front-end structure, tout en affinant un langage visuel minimal.",
+        "about.bio_text1": "Mon parcours a commence avec le design visuel et le travail client, puis s'est elargi au developpement front-end et back-end. Cette combinaison m'aide a creer des sites soignes visuellement et techniquement.",
+        "about.bio_text2": "Aujourd'hui, je me concentre sur l'amelioration de mon niveau a travers des projets reels, des formations et un travail full-stack structure, tout en affinant un langage visuel minimal.",
         "about.stat1_title": "Annees en design",
         "about.stat1_text": "Le freelance et le travail sur des marketplaces ont construit ma vision visuelle et ma communication client.",
         "about.stat2_title": "Etapes cles",
-        "about.stat2_text": "Des services de design a la formation front-end et aux etudes web centrees interface.",
+        "about.stat2_text": "Des services de design a la formation front-end et aux etudes en developpement web full-stack.",
         "about.stat3_title": "Focus actuel",
-        "about.stat3_text": "Construire des experiences front-end soignees et ameliorer la qualite d'interface et de presentation.",
+        "about.stat3_text": "Construire des experiences web completes et ameliorer la qualite d'interface ainsi que la structure applicative.",
         "about.timeline_label": "Parcours",
         "about.timeline_title": "Une experience qui relie le design et le developpement web.",
-        "about.timeline_text": "Chaque etape a apporte quelque chose de concret : relation client, presentation produit, bases d'interface et meilleure execution front-end.",
+        "about.timeline_text": "Chaque etape a apporte quelque chose de concret : relation client, presentation produit, bases d'interface et meilleure execution full-stack.",
         "about.t1_title": "Designer freelance / Services digitaux",
         "about.t1_text": "J'ai travaille comme freelance sur Fiverr en proposant des services digitaux et du travail lie au design. J'y ai developpe une vraie experience de communication client, de comprehension des besoins, de livraison dans les delais et d'amelioration des competences visuelles grace a des projets reels.",
         "about.t1_skills": "<strong>Competences acquises :</strong> communication client, freelance, design digital, gestion du temps, resolution de problemes, activite en ligne.",
@@ -257,9 +265,9 @@ var portfolioTranslations = {
         "about.t3_title": "Formation Meta Front-End Developer",
         "about.t3_text": "J'ai termine une formation en ligne centree sur les bases du developpement front-end. J'y ai etudie HTML, CSS, JavaScript, le responsive design et les concepts front-end modernes.",
         "about.t3_skills": "<strong>Competences acquises :</strong> HTML, CSS, JavaScript, responsive design, bases UI, fondamentaux front-end.",
-        "about.t4_title": "Developpement web front-end",
-        "about.t4_text": "J'etudie actuellement le developpement web a YouCode UM6P Safi avec un fort accent sur l'implementation front-end, les interfaces responsives, le versioning, le travail d'equipe et la structure projet.",
-        "about.t4_skills": "<strong>Competences acquises :</strong> developpement front-end, JavaScript, UI responsive, Git/GitHub, travail d'equipe, structure d'interface, planification projet.",
+        "about.t4_title": "Developpement web full-stack",
+        "about.t4_text": "J'etudie actuellement le developpement web full-stack a YouCode UM6P Safi. J'y apprends a construire des applications web completes avec des technologies modernes, y compris le front-end, le back-end, les bases de donnees, le versioning et la gestion de projet.",
+        "about.t4_skills": "<strong>Competences acquises :</strong> developpement full-stack, PHP, Laravel, JavaScript, SQL, Git/GitHub, OOP, MVC, travail d'equipe, planification projet.",
         "about.skills_label": "Competences",
         "about.skills_title": "Outils et capacites que j'utilise.",
         "about.footer": "A propos, parcours et profil technique"
@@ -308,9 +316,41 @@ function initPortfolioLanguage() {
     document.querySelectorAll('.lang-button').forEach(function (button) {
         button.onclick = function () {
             applyPortfolioLanguage(button.getAttribute('data-lang'));
+            applyPortfolioTheme(localStorage.getItem('portfolioTheme') || 'light');
+        };
+    });
+}
+
+function applyPortfolioTheme(theme) {
+    var mode = theme === 'dark' ? 'dark' : 'light';
+    document.body.classList.toggle('theme-dark', mode === 'dark');
+    localStorage.setItem('portfolioTheme', mode);
+
+    var lang = localStorage.getItem('portfolioLanguage') || 'en';
+    var key = mode === 'dark' ? 'theme.dark' : 'theme.light';
+    var label = (portfolioTranslations[lang] && portfolioTranslations[lang][key]) || (mode === 'dark' ? 'Dark' : 'Light');
+
+    document.querySelectorAll('[data-theme-toggle]').forEach(function (button) {
+        var text = button.querySelector('.theme-toggle-text');
+        if (text) {
+            text.textContent = label;
+        }
+    });
+}
+
+function initPortfolioTheme() {
+    var savedTheme = localStorage.getItem('portfolioTheme') || 'light';
+    applyPortfolioTheme(savedTheme);
+
+    document.querySelectorAll('[data-theme-toggle]').forEach(function (button) {
+        button.onclick = function () {
+            var current = localStorage.getItem('portfolioTheme') || 'light';
+            applyPortfolioTheme(current === 'dark' ? 'light' : 'dark');
         };
     });
 }
 
 document.addEventListener('DOMContentLoaded', initPortfolioLanguage);
 document.addEventListener('navbar:loaded', initPortfolioLanguage);
+document.addEventListener('DOMContentLoaded', initPortfolioTheme);
+document.addEventListener('navbar:loaded', initPortfolioTheme);
