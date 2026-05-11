@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 const path = require('path');
 
 const app = express();
@@ -44,25 +44,28 @@ function escapeHtml(value = '') {
     });
 }
 
-function createTransporter() {
-    const host = process.env.SMTP_HOST;
-    const port = Number(process.env.SMTP_PORT) || 587;
-    const user = process.env.SMTP_USER;
-    const pass = process.env.SMTP_PASS;
+function createResendClient() {
+    const apiKey = process.env.RESEND_API_KEY;
 
-    if (!host || !user || !pass) {
-        throw new Error('SMTP configuration is missing. Check your .env file.');
+    if (!apiKey) {
+        throw new Error('Resend configuration is missing. Check your environment variables.');
     }
 
-    return nodemailer.createTransport({
-        host,
-        port,
-        secure: port === 465,
-        auth: {
-            user,
-            pass,
-        },
-    });
+    return new Resend(apiKey);
+}
+
+function getMailSettings() {
+    const fromAddress = process.env.RESEND_FROM;
+    const toAddress = process.env.CONTACT_TO;
+
+    if (!fromAddress || !toAddress) {
+        throw new Error('Resend configuration is missing. Check your environment variables.');
+    }
+
+    return {
+        fromAddress,
+        toAddress,
+    };
 }
 
 app.get('/api/test', function (req, res) {
@@ -111,11 +114,8 @@ app.post('/api/contact', async function (req, res) {
             });
         }
 
-        const transporter = createTransporter();
-        await transporter.verify();
-
-        const toAddress = process.env.CONTACT_TO || process.env.SMTP_USER;
-        const fromAddress = process.env.SMTP_FROM || process.env.SMTP_USER;
+        const resend = createResendClient();
+        const { fromAddress, toAddress } = getMailSettings();
 
         const safeName = escapeHtml(trimmedName);
         const safeEmail = escapeHtml(trimmedEmail);
@@ -162,9 +162,9 @@ LinkedIn: https://www.linkedin.com/in/abdessamad-el-ouarrag/
 Instagram: https://www.instagram.com/elg04/
 `;
 
-        await transporter.sendMail({
-            from: `"${trimmedName} via Abdessamad Elouarrag" <${fromAddress}>`,
-            to: toAddress,
+        const contactEmail = await resend.emails.send({
+            from: fromAddress,
+            to: [toAddress],
             replyTo: trimmedEmail,
             subject: mailSubject,
             text: `
@@ -219,14 +219,22 @@ ${trimmedMessage}
             `,
         });
 
-        await transporter.sendMail({
-            from: `"Abdessamad Elouarrag" <${fromAddress}>`,
-            to: trimmedEmail,
+        if (contactEmail.error) {
+            throw new Error(contactEmail.error.message || 'Unable to send email right now.');
+        }
+
+        const autoReplyEmail = await resend.emails.send({
+            from: fromAddress,
+            to: [trimmedEmail],
             replyTo: toAddress,
             subject: autoReplySubject,
             text: autoReplyText,
             html: autoReplyHtml,
         });
+
+        if (autoReplyEmail.error) {
+            throw new Error(autoReplyEmail.error.message || 'Unable to send email right now.');
+        }
 
         return res.status(200).json({
             success: true,
@@ -237,11 +245,7 @@ ${trimmedMessage}
 
         let friendlyError = 'Unable to send email right now.';
 
-        if (error && error.code === 'EAUTH') {
-            friendlyError = 'SMTP authentication failed. Check your Gmail app password.';
-        } else if (error && error.code === 'ESOCKET') {
-            friendlyError = 'SMTP connection failed. Check SMTP host/port.';
-        } else if (error && error.message) {
+        if (error && error.message) {
             friendlyError = error.message;
         }
 
