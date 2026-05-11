@@ -189,12 +189,26 @@ function initContactForm() {
                 }
 
                 if (!response.ok || !result.success) {
+                    // If the backend answered with JSON, keep that real error and stop falling through.
                     throw new Error(result.error || getTranslation('contact.error', 'Unable to send your message right now.'));
                 }
 
                 return result;
             } catch (error) {
-                lastError = error;
+                var message = error && error.message ? error.message : '';
+                var isServerPreviewMessage = message === getTranslation(
+                    'contact.server_required',
+                    'Open this project through Laragon, Apache, or a local PHP/Node server. The form cannot send from a static HTML preview.'
+                );
+                var isNetworkError = error instanceof TypeError;
+
+                if (!isNetworkError && !isServerPreviewMessage) {
+                    throw error;
+                }
+
+                if (!lastError || !isServerPreviewMessage) {
+                    lastError = error;
+                }
             }
         }
 
