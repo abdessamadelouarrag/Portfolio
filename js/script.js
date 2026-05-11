@@ -94,8 +94,8 @@ function initContactForm() {
 
         bases.forEach(function (base) {
             var normalizedBase = base.replace(/\/+$/, '');
-            endpoints.push(normalizedBase + '/api/contact.php');
             endpoints.push(normalizedBase + '/api/contact');
+            endpoints.push(normalizedBase + '/api/contact.php');
         });
 
         return endpoints.filter(function (endpoint, index, list) {

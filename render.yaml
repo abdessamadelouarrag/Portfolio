@@ -1,0 +1,23 @@
+services:
+  - type: web
+    runtime: node
+    name: portfolio
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/test
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: SMTP_FROM
+        sync: false
+      - key: CONTACT_TO
+        sync: false
