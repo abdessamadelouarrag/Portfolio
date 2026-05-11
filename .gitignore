@@ -2,3 +2,7 @@
 .gitignore
 .env
 node_modules
+.composer
+.composer-cache
+.composer.json
+vendor/

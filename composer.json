@@ -1,0 +1,9 @@
+{
+    "name": "abdessamad/portfolio",
+    "description": "Portfolio contact form powered by PHPMailer",
+    "type": "project",
+    "require": {
+        "php": "^8.1",
+        "phpmailer/phpmailer": "^6.9"
+    }
+}

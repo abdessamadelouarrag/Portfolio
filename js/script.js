@@ -75,7 +75,44 @@ function initContactForm() {
 
     var submitButton = document.getElementById('contact-submit');
     var statusEl = document.getElementById('contact-status');
-    var targetEmail = 'abdessamad4804@gmail.com';
+    var loadingOverlay = document.getElementById('contact-loading-overlay');
+    var contactEndpoints = buildContactEndpoints();
+
+    function buildContactEndpoints() {
+        var endpoints = [];
+        var currentUrl = new URL(window.location.href);
+        var pathSegments = currentUrl.pathname.split('/').filter(Boolean);
+        var bases = [''];
+
+        if (pathSegments.length > 1) {
+            bases.push('/' + pathSegments.slice(0, -1).join('/'));
+        }
+
+        if (pathSegments.length > 2) {
+            bases.push('/' + pathSegments.slice(0, -2).join('/'));
+        }
+
+        bases.forEach(function (base) {
+            var normalizedBase = base.replace(/\/+$/, '');
+            endpoints.push(normalizedBase + '/api/contact.php');
+            endpoints.push(normalizedBase + '/api/contact');
+        });
+
+        return endpoints.filter(function (endpoint, index, list) {
+            return endpoint && list.indexOf(endpoint) === index;
+        });
+    }
+
+    function getTranslation(key, fallback) {
+        if (typeof portfolioTranslations === 'undefined') {
+            return fallback;
+        }
+
+        var lang = localStorage.getItem('portfolioLanguage') || 'en';
+        var bundle = portfolioTranslations[lang] || portfolioTranslations.en || {};
+
+        return bundle[key] || fallback;
+    }
 
     function setStatus(message, type) {
         if (!statusEl) return;
@@ -96,12 +133,22 @@ function initContactForm() {
         if (!submitButton) return;
 
         submitButton.disabled = isLoading;
+        form.classList.toggle('is-submitting', isLoading);
+
+        if (loadingOverlay) {
+            loadingOverlay.classList.toggle('is-active', isLoading);
+            loadingOverlay.setAttribute('aria-hidden', isLoading ? 'false' : 'true');
+        }
+
+        document.body.classList.toggle('loading-active', isLoading);
 
         var label = submitButton.querySelector('.submit-label');
         var icon = submitButton.querySelector('.submit-icon');
 
         if (label) {
-            label.textContent = isLoading ? 'Opening...' : 'Open Email Draft';
+            label.textContent = isLoading
+                ? getTranslation('contact.sending', 'Sending...')
+                : getTranslation('contact.send', 'Send Message');
         }
 
         if (icon) {
@@ -109,7 +156,52 @@ function initContactForm() {
         }
     }
 
-    form.addEventListener('submit', function (event) {
+    async function submitContact(payload) {
+        var lastError = null;
+
+        if (window.location.protocol === 'file:') {
+            throw new Error(getTranslation(
+                'contact.server_required',
+                'Open this project through Laragon, Apache, or a local PHP/Node server. The form cannot send from a local file.'
+            ));
+        }
+
+        for (var i = 0; i < contactEndpoints.length; i++) {
+            try {
+                var response = await fetch(contactEndpoints[i], {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                var contentType = response.headers.get('content-type') || '';
+                var result = {};
+
+                if (contentType.indexOf('application/json') !== -1) {
+                    result = await response.json();
+                } else {
+                    throw new Error(getTranslation(
+                        'contact.server_required',
+                        'Open this project through Laragon, Apache, or a local PHP/Node server. The form cannot send from a static HTML preview.'
+                    ));
+                }
+
+                if (!response.ok || !result.success) {
+                    throw new Error(result.error || getTranslation('contact.error', 'Unable to send your message right now.'));
+                }
+
+                return result;
+            } catch (error) {
+                lastError = error;
+            }
+        }
+
+        throw lastError || new Error(getTranslation('contact.error', 'Unable to send your message right now.'));
+    }
+
+    form.addEventListener('submit', async function (event) {
         event.preventDefault();
         setStatus('', '');
 
@@ -121,42 +213,41 @@ function initContactForm() {
         var message = String(formData.get('message') || '').trim();
 
         if (company) {
-            setStatus('Thank you for your message.', 'success');
+            setStatus(getTranslation('contact.success', 'Thank you for your message.'), 'success');
             form.reset();
             return;
         }
 
         if (!name || !email || !subject || !message) {
-            setStatus('Please fill in all required fields.', 'error');
+            setStatus(getTranslation('contact.required', 'Please fill in all required fields.'), 'error');
             return;
         }
 
         var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(email)) {
-            setStatus('Please enter a valid email address.', 'error');
+            setStatus(getTranslation('contact.invalid_email', 'Please enter a valid email address.'), 'error');
             return;
         }
 
         setLoading(true);
-        setStatus('Opening your email app...', 'info');
+        setStatus(getTranslation('contact.sending_status', 'Sending your message...'), 'info');
 
-        var body = [
-            'Name: ' + name,
-            'Email: ' + email,
-            '',
-            message
-        ].join('\n');
+        try {
+            var result = await submitContact({
+                company: company,
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+            });
 
-        var mailtoUrl = 'mailto:' + encodeURIComponent(targetEmail) +
-            '?subject=' + encodeURIComponent(subject) +
-            '&body=' + encodeURIComponent(body);
-
-        window.location.href = mailtoUrl;
-
-        setTimeout(function () {
+            form.reset();
+            setStatus(result.message || getTranslation('contact.success', 'Your message was sent successfully.'), 'success');
+        } catch (error) {
+            setStatus(error.message || getTranslation('contact.error', 'Unable to send your message right now.'), 'error');
+        } finally {
             setLoading(false);
-            setStatus('Your email draft has been prepared. If nothing opened, contact me directly at ' + targetEmail + '.', 'success');
-        }, 250);
+        }
     });
 }
 
